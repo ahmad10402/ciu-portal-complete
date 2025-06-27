@@ -2,18 +2,30 @@
 <html>
 <head>
   <title>Semester 2</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    if (!localStorage.getItem("authenticated")) window.location.href = "index.html";
-  </script>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #ffffff; color: #000; margin: 0; padding: 0; }
+    .container { width: 90%; margin: 40px auto; }
+    h2 { text-align: center; color: #b91c1c; text-transform: uppercase; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid #ccc; background-color: #fff; }
+    th { background-color: #f1f5f9; color: #b91c1c; text-align: left; padding: 12px; border-bottom: 2px solid #ccc; }
+    td { padding: 12px; border-bottom: 1px solid #ddd; }
+    td.grade { background-color: #ffffff; color: #000000; font-weight: bold; text-align: center; }
+    tr:hover { background-color: #f9f9f9; }
+  </style>
 </head>
 <body>
-  <h2>Semester 2 Courses</h2>
-  <table>
-    <tr><th>Course</th><th>Grade</th></tr>
-    <tr><td>General Histology</td><td>81%</td></tr>
-    <tr><td>Biochemistry</td><td>79%</td></tr>
-    <tr><td>Medical Latin</td><td>88%</td></tr>
-  </table>
+  <div class="container">
+    <h2>Semester 2</h2>
+    <table>
+      <tr><th>Subject</th><th>Hours</th><th>Grade</th></tr>
+      <tr><td>Biochemistry</td><td>4.0</td><td class="grade">72%</td></tr>
+      <tr><td>Introduction to Latin medical terminology</td><td>2.0</td><td class="grade">70%</td></tr>
+      <tr><td>Human normal anatomy</td><td>4.0</td><td class="grade">69%</td></tr>
+      <tr><td>Foreign language – 2 (English)</td><td>5.0</td><td class="grade">73%</td></tr>
+      <tr><td>Medical physics</td><td>3.0</td><td class="grade">68%</td></tr>
+      <tr><td>Psychology</td><td>3.0</td><td class="grade">74%</td></tr>
+      <tr><td>Physical culture</td><td>2.0</td><td class="grade">75%</td></tr>
+    </table>
+  </div>
 </body>
 </html>
