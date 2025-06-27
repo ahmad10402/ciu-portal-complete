@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grades</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (!localStorage.getItem("authenticated")) window.location.href = "index.html";
+  </script>
+</head>
+<body>
+  <h2>Semester Grades</h2>
+  <table>
+    <tr><th>Semester</th><th>GPA</th></tr>
+    <tr><td>Semester 1</td><td>2.7</td></tr>
+    <tr><td>Semester 2</td><td>2.8</td></tr>
+    <tr><td>Semester 3</td><td>3.0</td></tr>
+    <tr><td>Semester 4</td><td>2.9</td></tr>
+    <tr><th>Total</th><th>2.9</th></tr>
+  </table>
+</body>
+</html>
