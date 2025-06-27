@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CIU Student Login</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    const users = {
-      "LR2545978": "CIU.2025",
-      "ST1029384": "pass123",
-      "OM4839201": "omar321"
-    };
-    function login(event) {
-      event.preventDefault();
-      const id = document.getElementById("studentId").value;
-      const pass = document.getElementById("password").value;
-      if (users[id] && users[id] === pass) {
-        localStorage.setItem("authenticated", id);
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Invalid ID or Password");
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CIU Login</title>
+  <style>
+    body {
+      background: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
-    if (localStorage.getItem("authenticated")) {
-      window.location.href = "dashboard.html";
+    .header {
+      background: #1f1f1f;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
     }
-  </script>
+    .container {
+      margin-top: 50px;
+    }
+    img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+    .login-btn {
+      background-color: #d9534f;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-btn:hover {
+      background-color: #c9302c;
+    }
+    footer {
+      margin-top: 40px;
+      color: #999;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <div class="login-container">
-    <h2>CIU Student Portal</h2>
-    <form onsubmit="login(event)">
-      <input type="text" id="studentId" placeholder="Student ID" required><br>
-      <input type="password" id="password" placeholder="Password" required><br>
-      <button type="submit">Login</button>
-    </form>
-    <p style="text-align:center; margin-top: 10px;">
-  <a href="signup.html">Sign Up</a> | 
-  <a href="reset.html">Forgot Password?</a>
-</p>
+
+  <div class="header">
+    სასწავლო პროცესის მართვის სისტემა
   </div>
+
+  <div class="container">
+    <img src="ciu-logo.png" alt="CIU Logo">
+    <h2>Login</h2>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login by E-Mail</button>
+  </div>
+
+  <footer>
+    © Goni - Caucasus International University
+  </footer>
+
 </body>
 </html>
