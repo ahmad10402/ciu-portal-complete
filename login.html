@@ -3,91 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CIU Student Login</title>
-  <style>
-    body {
-      margin: 0;
-      background: linear-gradient(to right, #000428, #004e92);
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-    .login-container {
-      max-width: 360px;
-      margin: 80px auto;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 30px;
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="email"] {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-    }
-    button {
-      width: 100%;
-      background: #00c9ff;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      padding: 12px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .links {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    .links a {
-      color: #ddd;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-    img {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-  </style>
+  <title>Login - CIU</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body style="background-color: #ffffff; font-family: Arial, sans-serif;">
 
-  <div class="login-container">
-    <img src="ciu-logo.png" alt="CIU Logo">
-    <h1>CIU STUDENT PORTAL</h1>
-    <input type="email" id="email" placeholder="Enter your CIU Email" required />
-    <button onclick="sendCode()">Send Verification Code</button>
-    <div class="links">
-      <a href="signup.html">Sign Up</a> | <a href="forgot.html">Forgot Password?</a>
+  <div style="max-width: 400px; margin: 60px auto; text-align: center;">
+    <img src="ciu-logo.png" alt="CIU Logo" style="width: 160px; margin-bottom: 20px;" />
+
+    <h2 style="color: #a10000;">Login</h2>
+
+    <form>
+      <input type="text" placeholder="Student ID" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;" required>
+      <input type="password" placeholder="Password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;" required>
+      
+      <button type="submit" style="width: 100%; padding: 10px; background-color: #a10000; color: white; border: none; font-size: 16px;">
+        Login
+      </button>
+    </form>
+
+    <div style="margin-top: 15px;">
+      <a href="signup.html" style="color: #a10000;">Sign Up</a> |
+      <a href="forgot-password.html" style="color: #a10000;">Forgot Password?</a>
     </div>
+
+    <p style="margin-top: 40px; font-size: 12px; color: #aaa;">
+      © Goni - Caucasus International University
+    </p>
   </div>
-
-  <script>
-    function sendCode() {
-      const email = document.getElementById("email").value;
-      if (!email) {
-        alert("Please enter your email.");
-        return;
-      }
-
-      const code = Math.floor(100000 + Math.random() * 900000);
-      localStorage.setItem("loginCode", code);
-      alert("Verification code sent to: " + email);
-
-      // Simulate sending to EmailJS
-      // You'll replace this with actual EmailJS integration
-      console.log("Pretend code is sent:", code);
-      setTimeout(() => {
-        window.location.href = "verify.html";
-      }, 1000);
-    }
-  </script>
 
 </body>
 </html>
