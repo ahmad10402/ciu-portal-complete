@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - CIU</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>CIU | Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      margin-top: 80px;
+    }
+    .login-button {
+      background-color: #b30000;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .login-button:hover {
+      background-color: #a00000;
+    }
+    footer {
+      margin-top: 80px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
 </head>
-<body style="background-color: #ffffff; font-family: Arial, sans-serif;">
-
-  <div style="max-width: 400px; margin: 60px auto; text-align: center;">
-    <img src="ciu-logo.png" alt="CIU Logo" style="width: 160px; margin-bottom: 20px;" />
-
-    <h2 style="color: #a10000;">Login</h2>
-
-    <form>
-      <input type="text" placeholder="Student ID" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;" required>
-      <input type="password" placeholder="Password" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;" required>
-      
-      <button type="submit" style="width: 100%; padding: 10px; background-color: #a10000; color: white; border: none; font-size: 16px;">
-        Login
-      </button>
-    </form>
-
-    <div style="margin-top: 15px;">
-      <a href="signup.html" style="color: #a10000;">Sign Up</a> |
-      <a href="forgot-password.html" style="color: #a10000;">Forgot Password?</a>
-    </div>
-
-    <p style="margin-top: 40px; font-size: 12px; color: #aaa;">
-      © Goni - Caucasus International University
-    </p>
+<body>
+  <div class="login-container">
+    <img src="ciu-logo.png" alt="CIU Logo" style="width: 140px;">
+    <h2>Login</h2>
+    <button class="login-button">Login by E-Mail</button>
   </div>
 
+  <footer>
+    © Goni - Caucasus International University
+  </footer>
 </body>
 </html>
