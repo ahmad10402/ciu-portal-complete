@@ -1,100 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CIU | Login</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CIU Student Login</title>
   <style>
     body {
-      background-color: #fff;
+      margin: 0;
+      background: linear-gradient(to right, #000428, #004e92);
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
+      color: white;
     }
-    .container {
-      max-width: 400px;
-      margin: auto;
-      border: 1px solid #ccc;
+    .login-container {
+      max-width: 360px;
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
     }
     button {
-      background-color: #d93636;
-      color: white;
+      width: 100%;
+      background: #00c9ff;
+      color: #000;
+      font-weight: bold;
       border: none;
-      padding: 12px 20px;
+      padding: 12px;
       border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
-      margin-top: 10px;
     }
-    input {
-      padding: 10px;
-      width: 90%;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    #status {
-      color: green;
+    .links {
       margin-top: 10px;
+      font-size: 14px;
+    }
+    .links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    img {
+      width: 100px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="ciu-logo.png" alt="CIU Logo" width="120">
-    <h2>Login</h2>
 
-    <input type="text" id="studentId" placeholder="Passport Number"><br>
-    <button onclick="sendCode()">Login by E-Mail</button>
-
-    <div id="codeArea" style="display:none;">
-      <input type="text" id="inputCode" placeholder="Enter Verification Code">
-      <button onclick="verifyCode()">Verify</button>
+  <div class="login-container">
+    <img src="ciu-logo.png" alt="CIU Logo">
+    <h1>CIU STUDENT PORTAL</h1>
+    <input type="email" id="email" placeholder="Enter your CIU Email" required />
+    <button onclick="sendCode()">Send Verification Code</button>
+    <div class="links">
+      <a href="signup.html">Sign Up</a> | <a href="forgot.html">Forgot Password?</a>
     </div>
-
-    <p id="status"></p>
   </div>
 
   <script>
-    emailjs.init("1xYQGxOC2JBKdb3vC"); // Public key
-
-    let generatedCode = "";
-
     function sendCode() {
-      const studentId = document.getElementById("studentId").value.trim();
-      if (!studentId) {
-        alert("Please enter your passport number.");
+      const email = document.getElementById("email").value;
+      if (!email) {
+        alert("Please enter your email.");
         return;
       }
 
-      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+      const code = Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem("loginCode", code);
+      alert("Verification code sent to: " + email);
 
-      const params = {
-        to_email: "mohammad.youness@ciu.edu.ge",
-        code: generatedCode,
-        student_id: studentId
-      };
-
-      emailjs.send("service_th5035j", "template_90zrpeq", params)
-        .then(function(response) {
-          document.getElementById("status").textContent = "Verification code sent to your email.";
-          document.getElementById("codeArea").style.display = "block";
-        }, function(error) {
-          document.getElementById("status").textContent = "Failed to send code.";
-          console.error("EmailJS error:", error);
-        });
-    }
-
-    function verifyCode() {
-      const inputCode = document.getElementById("inputCode").value.trim();
-      if (inputCode === generatedCode) {
-        window.location.href = "dashboard.html"; // تعديل حسب وجهتك بعد الدخول
-      } else {
-        alert("Incorrect code. Try again.");
-      }
+      // Simulate sending to EmailJS
+      // You'll replace this with actual EmailJS integration
+      console.log("Pretend code is sent:", code);
+      setTimeout(() => {
+        window.location.href = "verify.html";
+      }, 1000);
     }
   </script>
+
 </body>
 </html>
