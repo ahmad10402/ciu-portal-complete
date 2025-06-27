@@ -3,43 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>CIU | Login</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    emailjs.init("1xYQGxOC2JBKdb3vC");
+  </script>
   <style>
-    body {
-      text-align: center;
-      background-color: #fff;
-      font-family: Arial, sans-serif;
-    }
-    .login-container {
-      margin-top: 80px;
-    }
-    .login-button {
-      background-color: #b30000;
-      color: white;
-      padding: 10px 30px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .login-button:hover {
-      background-color: #a00000;
-    }
-    footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #888;
-    }
+    body { text-align: center; font-family: Arial; padding-top: 50px; }
+    input { padding: 10px; margin: 10px; width: 250px; }
+    button { padding: 10px 20px; background: darkred; color: white; border: none; cursor: pointer; }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <img src="ciu-logo.png" alt="CIU Logo" style="width: 140px;">
-    <h2>Login</h2>
-    <button class="login-button">Login by E-Mail</button>
+
+  <img src="ciu-logo.png" alt="CIU Logo" width="150"><br>
+  <h2>Login</h2>
+
+  <div id="step1">
+    <input type="email" id="email" placeholder="Enter your CIU email" required>
+    <br>
+    <button onclick="sendCode()">Login by E-Mail</button>
   </div>
 
-  <footer>
-    © Goni - Caucasus International University
-  </footer>
+  <div id="step2" style="display:none;">
+    <input type="text" id="codeInput" placeholder="Enter verification code">
+    <br>
+    <button onclick="verifyCode()">Verify</button>
+  </div>
+
+  <p id="msg" style="color: green;"></p>
+
+  <script>
+    let generatedCode = "";
+
+    function sendCode() {
+      const email = document.getElementById("email").value;
+      if (!email) return alert("Please enter your email.");
+
+      // Generate 6-digit random code
+      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+      const templateParams = {
+        to_email: email,
+        code: generatedCode
+      };
+
+      emailjs.send("service_th5035j", "template_90zrpeq", templateParams)
+        .then(() => {
+          document.getElementById("msg").innerText = "Verification code sent!";
+          document.getElementById("step1").style.display = "none";
+          document.getElementById("step2").style.display = "block";
+        }, (error) => {
+          alert("Failed to send code. Please try again.");
+          console.error(error);
+        });
+    }
+
+    function verifyCode() {
+      const inputCode = document.getElementById("codeInput").value;
+      if (inputCode === generatedCode) {
+        window.location.href = "dashboard.html"; // أو أي صفحة بعد الدخول
+      } else {
+        alert("Incorrect code. Try again.");
+      }
+    }
+  </script>
+
 </body>
 </html>
