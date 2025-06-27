@@ -3,68 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>CIU | Login</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    emailjs.init("1xYQGxOC2JBKdb3vC");
+    (function() {
+      emailjs.init("1xYQGxOC2JBKdb3vC"); // Public Key
+    })();
   </script>
   <style>
-    body { text-align: center; font-family: Arial; padding-top: 50px; }
-    input { padding: 10px; margin: 10px; width: 250px; }
-    button { padding: 10px 20px; background: darkred; color: white; border: none; cursor: pointer; }
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #800000;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
-  <img src="ciu-logo.png" alt="CIU Logo" width="150"><br>
+  <img src="ciu-logo.png" width="120" alt="CIU Logo">
   <h2>Login</h2>
-
-  <div id="step1">
-    <input type="email" id="email" placeholder="Enter your CIU email" required>
-    <br>
-    <button onclick="sendCode()">Login by E-Mail</button>
-  </div>
-
-  <div id="step2" style="display:none;">
-    <input type="text" id="codeInput" placeholder="Enter verification code">
-    <br>
-    <button onclick="verifyCode()">Verify</button>
-  </div>
-
-  <p id="msg" style="color: green;"></p>
+  <input type="email" id="email" placeholder="Enter your CIU Email" required>
+  <br>
+  <button onclick="sendCode()">Login by E-Mail</button>
 
   <script>
-    let generatedCode = "";
+    function generateCode() {
+      return Math.floor(100000 + Math.random() * 900000);
+    }
 
     function sendCode() {
       const email = document.getElementById("email").value;
-      if (!email) return alert("Please enter your email.");
+      const code = generateCode();
 
-      // Generate 6-digit random code
-      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+      if (!email.endsWith("@ciu.edu.ge")) {
+        alert("Please use your CIU email address.");
+        return;
+      }
 
       const templateParams = {
         to_email: email,
-        code: generatedCode
+        code: code,
       };
 
       emailjs.send("service_th5035j", "template_90zrpeq", templateParams)
-        .then(() => {
-          document.getElementById("msg").innerText = "Verification code sent!";
-          document.getElementById("step1").style.display = "none";
-          document.getElementById("step2").style.display = "block";
-        }, (error) => {
+        .then(function(response) {
+          alert("Verification code sent to your email.");
+          localStorage.setItem("ciu-login-code", code);
+          localStorage.setItem("ciu-login-email", email);
+          window.location.href = "verify.html";
+        }, function(error) {
           alert("Failed to send code. Please try again.");
-          console.error(error);
+          console.log("EmailJS error:", error);
         });
-    }
-
-    function verifyCode() {
-      const inputCode = document.getElementById("codeInput").value;
-      if (inputCode === generatedCode) {
-        window.location.href = "dashboard.html"; // أو أي صفحة بعد الدخول
-      } else {
-        alert("Incorrect code. Try again.");
-      }
     }
   </script>
 
