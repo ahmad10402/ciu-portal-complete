@@ -2,18 +2,29 @@
 <html>
 <head>
   <title>Semester 4</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    if (!localStorage.getItem("authenticated")) window.location.href = "index.html";
-  </script>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #ffffff; color: #000; margin: 0; padding: 0; }
+    .container { width: 90%; margin: 40px auto; }
+    h2 { text-align: center; color: #b91c1c; text-transform: uppercase; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid #ccc; background-color: #fff; }
+    th { background-color: #f1f5f9; color: #b91c1c; text-align: left; padding: 12px; border-bottom: 2px solid #ccc; }
+    td { padding: 12px; border-bottom: 1px solid #ddd; }
+    td.grade { background-color: #ffffff; color: #000000; font-weight: bold; text-align: center; }
+    tr:hover { background-color: #f9f9f9; }
+  </style>
 </head>
 <body>
-  <h2>Semester 4 Courses</h2>
-  <table>
-    <tr><th>Course</th><th>Grade</th></tr>
-    <tr><td>Oral Surgery</td><td>76%</td></tr>
-    <tr><td>Endodontics</td><td>69%</td></tr>
-    <tr><td>Operative Dentistry</td><td>72%</td></tr>
-  </table>
+  <div class="container">
+    <h2>Semester 4</h2>
+    <table>
+      <tr><th>Subject</th><th>Hours</th><th>Grade</th></tr>
+      <tr><td>Pathological physiology</td><td>4.0</td><td class="grade">69%</td></tr>
+      <tr><td>Internal medicine</td><td>4.0</td><td class="grade">70%</td></tr>
+      <tr><td>Pathological anatomy</td><td>4.0</td><td class="grade">72%</td></tr>
+      <tr><td>Immunology</td><td>3.0</td><td class="grade">73%</td></tr>
+      <tr><td>Surgical diseases</td><td>3.0</td><td class="grade">68%</td></tr>
+      <tr><td>Professional foreign language</td><td>2.0</td><td class="grade">75%</td></tr>
+    </table>
+  </div>
 </body>
 </html>
