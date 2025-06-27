@@ -3,66 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CIU Login</title>
-  <style>
-    body {
-      background: #fff;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .header {
-      background: #1f1f1f;
-      color: #fff;
-      padding: 10px;
-      font-size: 16px;
-    }
-    .container {
-      margin-top: 50px;
-    }
-    img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      color: #333;
-    }
-    .login-btn {
-      background-color: #d9534f;
-      color: white;
-      padding: 12px 30px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .login-btn:hover {
-      background-color: #c9302c;
-    }
-    footer {
-      margin-top: 40px;
-      color: #999;
-      font-size: 14px;
-    }
-  </style>
+  <title>CIU Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body style="background-color: #ffffff; font-family: Arial, sans-serif; text-align: center;">
 
-  <div class="header">
-    სასწავლო პროცესის მართვის სისტემა
+  <div style="margin-top: 50px;">
+    <img src="ciu-logo.png" alt="CIU Logo" style="width: 180px;" />
+    <h1 style="color: #a10000; margin-top: 20px;">Caucasus International University</h1>
+    <h2 style="color: #333;">Student Portal</h2>
+
+    <div style="margin-top: 40px;">
+      <a href="login.html">
+        <button style="padding: 10px 25px; font-size: 16px; background-color: #a10000; color: white; border: none; border-radius: 5px;">
+          Login
+        </button>
+      </a>
+    </div>
   </div>
-
-  <div class="container">
-    <img src="ciu-logo.png" alt="CIU Logo">
-    <h2>Login</h2>
-    <button class="login-btn" onclick="window.location.href='login.html'">Login by E-Mail</button>
-  </div>
-
-  <footer>
-    © Goni - Caucasus International University
-  </footer>
 
 </body>
 </html>
