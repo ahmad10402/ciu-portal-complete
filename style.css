@@ -1,0 +1,42 @@
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  color: #333;
+}
+h2 {
+  text-align: center;
+  color: #003366;
+}
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+ul {
+  width: 50%;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 10px 0;
+  text-align: center;
+}
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
