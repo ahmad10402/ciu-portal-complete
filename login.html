@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CIU | Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 30px;
+    }
+    button {
+      background-color: #d93636;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    input {
+      padding: 10px;
+      width: 90%;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #status {
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="ciu-logo.png" alt="CIU Logo" width="120">
+    <h2>Login</h2>
+
+    <input type="text" id="studentId" placeholder="Passport Number"><br>
+    <button onclick="sendCode()">Login by E-Mail</button>
+
+    <div id="codeArea" style="display:none;">
+      <input type="text" id="inputCode" placeholder="Enter Verification Code">
+      <button onclick="verifyCode()">Verify</button>
+    </div>
+
+    <p id="status"></p>
+  </div>
+
+  <script>
+    emailjs.init("1xYQGxOC2JBKdb3vC"); // Public key
+
+    let generatedCode = "";
+
+    function sendCode() {
+      const studentId = document.getElementById("studentId").value.trim();
+      if (!studentId) {
+        alert("Please enter your passport number.");
+        return;
+      }
+
+      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+      const params = {
+        to_email: "mohammad.youness@ciu.edu.ge",
+        code: generatedCode,
+        student_id: studentId
+      };
+
+      emailjs.send("service_th5035j", "template_90zrpeq", params)
+        .then(function(response) {
+          document.getElementById("status").textContent = "Verification code sent to your email.";
+          document.getElementById("codeArea").style.display = "block";
+        }, function(error) {
+          document.getElementById("status").textContent = "Failed to send code.";
+          console.error("EmailJS error:", error);
+        });
+    }
+
+    function verifyCode() {
+      const inputCode = document.getElementById("inputCode").value.trim();
+      if (inputCode === generatedCode) {
+        window.location.href = "dashboard.html"; // تعديل حسب وجهتك بعد الدخول
+      } else {
+        alert("Incorrect code. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>
