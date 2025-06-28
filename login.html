@@ -1,82 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>CIU | Login</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .container {
-      background-color: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    input[type="email"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: #a4161a;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #821314;
-    }
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; margin: 10px; width: 250px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="ciu-logo.png" alt="CIU Logo" width="120" />
-    <h2>Login</h2>
-    <input type="email" id="user_email" placeholder="Enter your CIU E-Mail" value="mohammad.youness@ciu.edu.ge" />
-    <button onclick="sendVerificationCode()">Login by E-Mail</button>
-  </div>
+  <img src="ciu-logo.png" alt="CIU Logo" width="150" />
+  <h2>Login</h2>
+  <input type="email" id="email" value="mohammad.youness@ciu.edu.ge" readonly />
+  <br />
+  <button onclick="sendCode()">Login by E-Mail</button>
 
-  <script>
-    (function() {
-      emailjs.init("1xYQGxOC2JBKdb3vC"); // ✅ Public Key
-    })();
+  <script type="text/javascript">
+    // إعداد المفتاح الخاص
+    emailjs.init({
+      publicKey: '1xYQGxOC2JBKdb3vC',
+      privateKey: 'f_uuztFde17o98iOCrgLi'
+    });
 
-    function sendVerificationCode() {
-      const email = document.getElementById("user_email").value;
-
-      if (!email) {
-        alert("Please enter your email.");
-        return;
-      }
-
-      const code = Math.floor(100000 + Math.random() * 900000); // 6-digit random code
+    function sendCode() {
+      const code = Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem("verificationCode", code);
+      localStorage.setItem("userEmail", document.getElementById("email").value);
 
       const templateParams = {
-        to_email: email,
-        code: code,
+        to_email: document.getElementById("email").value,
+        code: code
       };
 
       emailjs.send("service_th5035j", "template_90zrpeq", templateParams)
-        .then(function(response) {
-          alert("Verification code sent to your email.");
-          // يمكنك حفظ الكود في LocalStorage مؤقتًا للمقارنة لاحقًا
-          localStorage.setItem("login_code", code);
-        }, function(error) {
+        .then(() => {
+          window.location.href = "verify.html";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
           alert("Failed to send code. Please try again.");
-          console.error(error);
         });
     }
   </script>
