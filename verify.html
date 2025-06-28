@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Verify Code</title>
   <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      margin-top: 100px;
-    }
-    input {
-      padding: 10px;
-      font-size: 16px;
-      width: 120px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #800000;
-      color: white;
-      border: none;
-      margin-top: 10px;
-    }
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; margin: 10px; width: 250px; }
   </style>
 </head>
 <body>
-
   <h2>Enter Verification Code</h2>
-  <input type="text" id="userCode" placeholder="6-digit code">
-  <br>
-  <button onclick="verify()">Verify</button>
+  <input type="text" id="codeInput" placeholder="Enter 6-digit code" />
+  <br />
+  <button onclick="verifyCode()">Verify</button>
 
   <script>
-    function verify() {
-      const userCode = document.getElementById("userCode").value;
-      const storedCode = localStorage.getItem("ciu-login-code");
+    function verifyCode() {
+      const enteredCode = document.getElementById("codeInput").value;
+      const savedCode = localStorage.getItem("verificationCode");
 
-      if (userCode === storedCode) {
-        alert("Verification successful.");
+      if (enteredCode === savedCode) {
+        alert("Login successful!");
         window.location.href = "dashboard.html";
       } else {
-        alert("Incorrect code. Please try again.");
+        alert("Invalid code. Please try again.");
       }
     }
   </script>
-
 </body>
 </html>
