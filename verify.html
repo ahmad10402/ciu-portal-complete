@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
   <title>Verify Code</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    input, button { padding: 10px; margin: 10px; width: 250px; }
+    body { font-family: Arial; text-align: center; padding: 50px; }
+    input, button { margin: 10px; padding: 10px; width: 250px; }
   </style>
 </head>
 <body>
   <h2>Enter Verification Code</h2>
-  <input type="text" id="codeInput" placeholder="Enter 6-digit code" />
-  <br />
+  <input type="text" id="codeInput" placeholder="Enter the code" />
   <button onclick="verifyCode()">Verify</button>
 
   <script>
     function verifyCode() {
-      const enteredCode = document.getElementById("codeInput").value;
+      const userCode = document.getElementById("codeInput").value;
       const savedCode = localStorage.getItem("verificationCode");
 
-      if (enteredCode === savedCode) {
+      if (userCode === savedCode) {
         alert("Login successful!");
-        window.location.href = "dashboard.html";
+        window.location.href = "student-dashboard.html"; // عدل حسب صفحة الطالب
       } else {
         alert("Invalid code. Please try again.");
       }
