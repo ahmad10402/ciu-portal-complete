@@ -2,44 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CIU | Login</title>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("9HJzhU4tNlYEhC8J2"); // public key الجديد
+    })();
+  </script>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    input, button { padding: 10px; margin: 10px; width: 250px; }
+    body { font-family: Arial; text-align: center; padding: 50px; }
+    input, button { margin: 10px; padding: 10px; width: 250px; }
   </style>
 </head>
 <body>
-  <img src="ciu-logo.png" alt="CIU Logo" width="150" />
+  <img src="ciu-logo.png" alt="CIU Logo" width="150"/>
   <h2>Login</h2>
-  <input type="email" id="email" value="mohammad.youness@ciu.edu.ge" readonly />
-  <br />
+  <input type="email" id="email" value="mohammad.youness@ciu.edu.ge" placeholder="Enter your email" required />
   <button onclick="sendCode()">Login by E-Mail</button>
 
-  <script type="text/javascript">
-    // إعداد المفتاح الخاص
-    emailjs.init({
-      publicKey: '1xYQGxOC2JBKdb3vC',
-      privateKey: 'f_uuztFde17o98iOCrgLi'
-    });
+  <script>
+    function generateCode() {
+      return Math.floor(100000 + Math.random() * 900000); // كود من 6 أرقام
+    }
 
     function sendCode() {
-      const code = Math.floor(100000 + Math.random() * 900000);
+      const email = document.getElementById("email").value;
+      const code = generateCode();
+
       localStorage.setItem("verificationCode", code);
-      localStorage.setItem("userEmail", document.getElementById("email").value);
+      localStorage.setItem("userEmail", email);
 
       const templateParams = {
-        to_email: document.getElementById("email").value,
-        code: code
+        to_email: email,
+        message: Your CIU verification code is: ${code},
       };
 
-      emailjs.send("service_th5035j", "template_90zrpeq", templateParams)
-        .then(() => {
-          window.location.href = "verify.html";
-        })
-        .catch((error) => {
-          console.error("Error:", error);
+      emailjs.send("service_wmnso5l", "template_90zrpeq", templateParams)
+        .then(function(response) {
+          alert("Verification code sent to your email.");
+          window.location.href = "verify.html"; // الانتقال لصفحة التأكيد
+        }, function(error) {
           alert("Failed to send code. Please try again.");
+          console.error("EmailJS Error:", error);
         });
     }
   </script>
