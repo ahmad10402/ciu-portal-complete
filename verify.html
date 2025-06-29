@@ -9,11 +9,18 @@
 <body>
   <div class="verify-container">
     <h2>Enter Verification Code</h2>
+    <p id="user-email" style="color: gray; font-size: 14px;"></p>
     <input type="text" id="codeInput" placeholder="6-digit code" />
     <button onclick="verifyCode()">Verify</button>
   </div>
 
-  <script>
+  <scr// عرض الإيميل عند تحميل الصفحة
+window.onload = function () {
+  const userEmail = localStorage.getItem("userEmail");
+  if (userEmail) {
+    document.getElementById("user-email").innerText = "E-Mail: " + userEmail;
+  }
+};ipt>
     function verifyCode() {
       const enteredCode = document.getElementById("codeInput").value.trim();
       const storedCode = localStorage.getItem("verificationCode");
