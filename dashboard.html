@@ -1,135 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>CIU | Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:400,700">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: white;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      background-color: #000;
-      padding: 10px 20px;
-    }
-
-    .header img {
-      height: 40px;
-      margin-right: 15px;
-    }
-
-    .header-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .container {
-      display: flex;
+      background: #fff;
+      color: #000;
     }
 
     .sidebar {
-      width: 200px;
-      background-color: #111;
+      width: 220px;
+      background: #f8f8f8;
+      color: #c00;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-right: 1px solid #ccc;
       padding-top: 20px;
-      height: 100vh;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #c00;
+      margin-bottom: 20px;
     }
 
     .sidebar a {
       display: block;
-      padding: 12px 20px;
-      color: white;
+      color: #c00;
       text-decoration: none;
-      border-bottom: 1px solid #333;
+      padding: 12px 20px;
+      border-bottom: 1px solid #eee;
     }
 
     .sidebar a:hover {
-      background-color: #c8102e;
+      background-color: #ffe5e5;
     }
 
-    .main {
-      flex: 1;
+    .content {
+      margin-left: 230px;
       padding: 20px;
-      background-color: #1c1c1c;
     }
 
-    .info-box {
-      background-color: #2e2e2e;
-      padding: 20px;
+    .dropdown {
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
       margin-bottom: 20px;
-      border-radius: 6px;
+      border-radius: 5px;
     }
 
-    .info-box h3 {
-      margin-top: 0;
-      color: #e0e0e0;
+    .dropdown summary {
+      padding: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ddd;
+      border-radius: 5px 5px 0 0;
     }
 
-    .green {
-      color: #00cc66;
+    .dropdown-content {
+      padding: 12px 20px;
+      background-color: #fff;
+    }
+
+    .info-line {
+      margin-bottom: 8px;
+    }
+
+    .label {
       font-weight: bold;
     }
 
-    .messages {
-      margin-top: 20px;
+    .green {
+      color: green;
     }
 
-    .message {
-      background-color: #2e2e2e;
-      padding: 10px 15px;
+    .red {
+      color: #c00;
+    }
+
+    .message-box {
+      border: 1px solid #c00;
+      background-color: #fff;
+      padding: 10px;
       margin-bottom: 10px;
-      border-left: 5px solid #c8102e;
-      border-radius: 4px;
+      border-radius: 5px;
+      color: #c00;
+    }
+
+    .logo {
+      width: 140px;
+      display: block;
+      margin: 0 auto 20px;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="ciu-logo.png" alt="CIU Logo" />
-    <div class="header-title">Learning Management System</div>
-  </div>
-
-  <div class="container">
-    <div class="sidebar">
-      <a href="grades.html">Grades</a>
-      <a href="profile.html">Student Profile</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="selected-courses.html">Selected Courses</a>
-      <a href="login.html">Logout</a>
-    </div>
-
-    <div class="main">
-      <div class="info-box">
-        <h3>Student Information</h3>
-        <p><strong>Name:</strong> Muhammad Younes</p>
-        <p><strong>Student Status:</strong> <span class="green">Active student</span></p>
-        <p><strong>University:</strong> Caucasus International University</p>
-        <p><strong>Faculty:</strong> Dentistry</p>
-        <p><strong>Academic Year:</strong> 2024–2025</p>
-        <p><strong>GPA:</strong> 2.9</p>
-        <p><strong>Balance:</strong> <span class="green">0.00 USD</span></p>
-      </div>
-
-      <div class="messages">
-        <h3>University Messages</h3>
-        <div class="message">New semester starts on September 2, 2025.</div>
-        <div class="message">Exam schedule will be published soon.</div>
-        <div class="message">Library access renewed until end of semester.</div>
-        <div class="message">Submit lab reports by Friday.</div>
-        <div class="message">New student ID cards available.</div>
-        <div class="message">Midterm grades will be available next week.</div>
-        <div class="message">Reminder: pay tuition before the deadline.</div>
-        <div class="message">Final exams scheduled in December.</div>
-        <div class="message">No classes on October 14 (public holiday).</div>
-        <div class="message">Workshop on dental hygiene this Friday.</div>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+  <div class="sidebar">
+    <img src="ciu-logo.png" alt="CIU Logo" class="logo">
+    <h2>Learning Management System</h2>
+    <a href="grades.html">Grades</a>
+    <a href="profile.html">Student Profile</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="selected.html">Selected Courses</a>
+    <a
