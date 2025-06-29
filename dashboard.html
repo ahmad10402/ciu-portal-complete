@@ -7,55 +7,59 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
     }
 
-    .top-info {
-      background-color: #202020;
+    .top-bar {
+      background-color: #111;
       color: white;
       padding: 10px 20px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .top-info div {
-      background-color: #343a40;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    .top-info .active {
-      background-color: #28a745;
+    .top-bar .nav-links a {
       color: white;
-      font-weight: bold;
-    }
-
-    .menu {
-      background-color: #343a40;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    .menu a {
-      color: white;
-      margin: 0 15px;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .container {
+    .top-bar .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .student-info-bar {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .student-info-bar .info-box {
+      margin: 5px 10px;
+      background-color: #2f2f2f;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .student-info-bar .active {
+      background-color: #28a745;
+      font-weight: bold;
+    }
+
+    .content {
       padding: 20px;
     }
 
     .messages {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .messages h2 {
@@ -64,43 +68,47 @@
     }
 
     .message {
-      padding: 12px;
-      margin-bottom: 10px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      font-weight: 500;
     }
 
     .message.red {
-      color: #dc3545;
+      color: #cc0000;
     }
 
     .message.green {
-      color: #28a745;
+      color: #2e8b57;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-info">
-    <div><strong>Name:</strong> Muhammad Younes</div>
-    <div class="active">Active Student</div>
-    <div><strong>University:</strong> Caucasus International University</div>
-    <div><strong>Faculty:</strong> Dentistry</div>
-    <div><strong>Year:</strong> 2024–2025</div>
-    <div><strong>GPA:</strong> 2.9</div>
-    <div><strong>Balance:</strong> 0.00 USD</div>
+  <div class="top-bar">
+    <img src="ciu-logo.png" alt="CIU Logo" height="40" />
+    <div class="nav-links">
+      <a href="grades.html">Grades</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="selected-courses.html">Selected Courses</a>
+      <a href="login.html">Logout</a>
+    </div>
   </div>
 
-  <div class="menu">
-    <a href="#">Grades</a>
-    <a href="#">Student Profile</a>
-    <a href="#">Schedule</a>
-    <a href="#">Selected Courses</a>
-    <a href="#">Logout</a>
+  <div class="student-info-bar">
+    <div class="info-box"><strong>Name:</strong> Muhammad Younes</div>
+    <div class="info-box active">Active Student</div>
+    <div class="info-box"><strong>University:</strong> Caucasus International University</div>
+    <div class="info-box"><strong>Faculty:</strong> Dentistry</div>
+    <div class="info-box"><strong>Year:</strong> 2024–2025</div>
+    <div class="info-box"><strong>GPA:</strong> 2.9</div>
+    <div class="info-box"><strong>Balance:</strong> 0.00 USD</div>
   </div>
 
-  <div class="container">
+  <div class="content">
     <div class="messages">
       <h2>University Messages</h2>
       <div class="message red">New semester starts on September 2, 2025.</div>
@@ -111,8 +119,8 @@
       <div class="message green">Dentistry conference on July 10, 2025.</div>
       <div class="message red">Midterm exams start August 14.</div>
       <div class="message green">Summer course applications now open.</div>
-      <div class="message red">COVID-19 safety rules updated.</div>
-      <div class="message green">Dormitory fee payment deadline extended.</div>
+      <div class="message green">COVID-19 safety rules updated.</div>
+      <div class="message red">Dormitory fee payment deadline extended.</div>
     </div>
   </div>
 
