@@ -1,110 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CIU | Dashboard</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:400,700">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CIU Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff;
+      background-color: #ffffff;
       color: #000;
     }
 
     .sidebar {
       width: 220px;
-      background: #f8f8f8;
-      color: #c00;
+      background-color: #000;
+      color: #fff;
+      height: 100vh;
       position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      border-right: 1px solid #ccc;
       padding-top: 20px;
     }
 
     .sidebar h2 {
       text-align: center;
-      color: #c00;
       margin-bottom: 20px;
     }
 
     .sidebar a {
       display: block;
-      color: #c00;
-      text-decoration: none;
+      color: #fff;
       padding: 12px 20px;
-      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      transition: background 0.3s;
     }
 
     .sidebar a:hover {
-      background-color: #ffe5e5;
+      background-color: #444;
     }
 
-    .content {
-      margin-left: 230px;
+    .main {
+      margin-left: 240px;
       padding: 20px;
     }
 
     .dropdown {
-      background-color: #f2f2f2;
-      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
       margin-bottom: 20px;
-      border-radius: 5px;
     }
 
-    .dropdown summary {
-      padding: 12px;
-      font-weight: bold;
+    .dropdown h3 {
+      margin: 0 0 10px;
       cursor: pointer;
-      background: #ddd;
-      border-radius: 5px 5px 0 0;
+      background-color: #eee;
+      padding: 10px;
     }
 
     .dropdown-content {
-      padding: 12px 20px;
-      background-color: #fff;
+      display: none;
+      padding-left: 10px;
     }
 
-    .info-line {
-      margin-bottom: 8px;
+    .dropdown-content p {
+      margin: 8px 0;
     }
 
-    .label {
-      font-weight: bold;
+    .dropdown.active .dropdown-content {
+      display: block;
     }
 
-    .green {
-      color: green;
+    .badge {
+      background-color: #28a745;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
     }
 
-    .red {
-      color: #c00;
+    .messages {
+      margin-top: 20px;
+    }
+
+    .messages h3 {
+      color: #b30000;
+      border-bottom: 2px solid #b30000;
+      padding-bottom: 5px;
     }
 
     .message-box {
-      border: 1px solid #c00;
-      background-color: #fff;
+      border: 1px solid #ccc;
       padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      color: #c00;
+      margin-top: 10px;
+      background-color: #f2f2f2;
+    }
+
+    .balance {
+      color: green;
     }
 
     .logo {
-      width: 140px;
-      display: block;
-      margin: 0 auto 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-width: 80px;
     }
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <img src="ciu-logo.png" alt="CIU Logo" class="logo">
-    <h2>Learning Management System</h2>
+    <div class="logo">
+      <img src="ciu-logo.png" alt="CIU Logo" />
+    </div>
     <a href="grades.html">Grades</a>
     <a href="profile.html">Student Profile</a>
     <a href="schedule.html">Schedule</a>
     <a href="selected.html">Selected Courses</a>
-    <a
+    <a href="login.html">Logout</a>
+  </div>
+
+  <div class="main">
+    <div class="dropdown" onclick="this.classList.toggle('active')">
+      <h3>Student Information &#9662;</h3>
+      <div class="dropdown-content">
+        <p><strong>Name:</strong> Muhammad Younes</p>
+        <p><strong>Student Status:</strong> <span class="badge">Active student</span></p>
+        <p><strong>University:</strong> Caucasus International University</p>
+        <p><strong>Faculty:</strong> Dentistry</p>
+        <p><strong>Academic Year:</strong> 2024–2025</p>
+        <p><strong>GPA:</strong> 2.9</p>
+        <p><strong>Balance:</strong> <span class="balance">0.00 USD</span></p>
+      </div>
+    </div>
+
+    <div class="messages">
+      <h3>University Messages</h3>
+      <div class="message-box">New semester starts on September 2, 2025.</div>
+      <div class="message-box">Exam schedule will be published soon.</div>
+      <div class="message-box">Library access renewed until end of semester.</div>
+      <div class="message-box">Submit lab reports by Friday.</div>
+      <div class="message-box">New student ID cards available.</div>
+      <div class="message-box">Dentistry conference on July 10, 2025.</div>
+      <div class="message-box">Midterm exams start August 14.</div>
+      <div class="message-box">Summer course applications now open.</div>
+      <div class="message-box">COVID-19 safety rules updated.</div>
+      <div class="message-box">Dormitory fee payment deadline extended.</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.dropdown h3').addEventListener('click', function () {
+      this.parentElement.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
