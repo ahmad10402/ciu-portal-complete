@@ -8,34 +8,19 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      display: flex;
     }
 
-    .sidebar {
-      width: 200px;
+    .header {
       background-color: #fff;
-      padding: 20px;
-      border-right: 1px solid #ccc;
-      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
     }
 
-    .sidebar img {
-      width: 100px;
-      display: block;
-      margin: 0 auto 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #222;
-      font-weight: bold;
-    }
-
-    .main-content {
-      flex-grow: 1;
-      padding: 20px;
+    .header img {
+      width: 60px;
+      margin-right: 20px;
     }
 
     .student-info {
@@ -46,6 +31,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin: 20px;
     }
 
     .student-info div {
@@ -56,6 +42,29 @@
 
     .student-info .active {
       background-color: #28a745;
+    }
+
+    .navbar {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 20px;
     }
 
     .messages {
@@ -83,8 +92,23 @@
   </style>
 </head>
 <body>
-  <div class="sidebar">
+
+  <div class="header">
     <img src="ciu-logo.png" alt="CIU Logo" />
+    <!-- header content optional -->
+  </div>
+
+  <div class="student-info">
+    <div><strong>Name:</strong> Muhammad Younes</div>
+    <div class="active">Active Student</div>
+    <div><strong>University:</strong> Caucasus International University</div>
+    <div><strong>Faculty:</strong> Dentistry</div>
+    <div><strong>Year:</strong> 2024–2025</div>
+    <div><strong>GPA:</strong> 2.9</div>
+    <div><strong>Balance:</strong> 0.00 USD</div>
+  </div>
+
+  <div class="navbar">
     <a href="grades.html">Grades</a>
     <a href="profile.html">Student Profile</a>
     <a href="schedule.html">Schedule</a>
@@ -93,16 +117,6 @@
   </div>
 
   <div class="main-content">
-    <div class="student-info">
-      <div><strong>Name:</strong> Muhammad Younes</div>
-      <div class="active">Active Student</div>
-      <div><strong>University:</strong> Caucasus International University</div>
-      <div><strong>Faculty:</strong> Dentistry</div>
-      <div><strong>Year:</strong> 2024–2025</div>
-      <div><strong>GPA:</strong> 2.9</div>
-      <div><strong>Balance:</strong> 0.00 USD</div>
-    </div>
-
     <div class="messages">
       <h2>University Messages</h2>
       <div class="message red">New semester starts on September 2, 2025.</div>
@@ -114,5 +128,6 @@
       <div class="message red">Midterm exams start August 14.</div>
     </div>
   </div>
+
 </body>
 </html>
