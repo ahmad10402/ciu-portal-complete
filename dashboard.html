@@ -10,38 +10,35 @@
       background-color: #f4f4f4;
     }
 
-    .header {
-      background-color: #fff;
+    .top-bar {
+      background-color: #3a3a3a;
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      border-bottom: 1px solid #ccc;
+      color: white;
     }
 
-    .header img {
+    .top-bar img {
       width: 60px;
       margin-right: 20px;
     }
 
     .student-info {
-      background-color: #3a3a3a;
-      color: white;
-      padding: 15px;
-      border-radius: 6px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 20px;
     }
 
     .student-info div {
       background-color: #555;
       padding: 6px 10px;
       border-radius: 5px;
+      font-size: 14px;
     }
 
     .student-info .active {
       background-color: #28a745;
+      color: white;
     }
 
     .navbar {
@@ -49,7 +46,7 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px solid #ccc;
       font-weight: bold;
     }
@@ -80,6 +77,7 @@
       margin: 5px 0;
       border: 1px solid #ccc;
       border-radius: 6px;
+      background-color: #f9f9f9;
     }
 
     .message.red {
@@ -93,21 +91,21 @@
 </head>
 <body>
 
-  <div class="header">
+  <!-- الشريط العلوي -->
+  <div class="top-bar">
     <img src="ciu-logo.png" alt="CIU Logo" />
-    <!-- header content optional -->
+    <div class="student-info">
+      <div><strong>Name:</strong> Muhammad Younes</div>
+      <div class="active">Active Student</div>
+      <div><strong>University:</strong> Caucasus International University</div>
+      <div><strong>Faculty:</strong> Dentistry</div>
+      <div><strong>Year:</strong> 2024–2025</div>
+      <div><strong>GPA:</strong> 2.9</div>
+      <div><strong>Balance:</strong> 0.00 USD</div>
+    </div>
   </div>
 
-  <div class="student-info">
-    <div><strong>Name:</strong> Muhammad Younes</div>
-    <div class="active">Active Student</div>
-    <div><strong>University:</strong> Caucasus International University</div>
-    <div><strong>Faculty:</strong> Dentistry</div>
-    <div><strong>Year:</strong> 2024–2025</div>
-    <div><strong>GPA:</strong> 2.9</div>
-    <div><strong>Balance:</strong> 0.00 USD</div>
-  </div>
-
+  <!-- شريط الروابط -->
   <div class="navbar">
     <a href="grades.html">Grades</a>
     <a href="profile.html">Student Profile</a>
@@ -116,6 +114,7 @@
     <a href="login.html">Logout</a>
   </div>
 
+  <!-- المحتوى -->
   <div class="main-content">
     <div class="messages">
       <h2>University Messages</h2>
