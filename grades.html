@@ -1,21 +1,65 @@
+Rabe33, [6/29/2025 6:45 AM]
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Grades</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    if (!localStorage.getItem("authenticated")) window.location.href = "index.html";
-  </script>
+    <meta charset="UTF-8">
+    <title>Grades</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Semester Grades</h2>
-  <table>
-    <tr><th>Semester</th><th>GPA</th></tr>
-    <tr><td>Semester 1</td><td>2.7</td></tr>
-    <tr><td>Semester 2</td><td>2.8</td></tr>
-    <tr><td>Semester 3</td><td>3.0</td></tr>
-    <tr><td>Semester 4</td><td>2.9</td></tr>
-    <tr><th>Total</th><th>2.9</th></tr>
-  </table>
+    <div class="grades-container">
+        <h2>Student Grades</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credits</th>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Semester 1 -->
+                <tr><td>General histology, with cytology</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Basics of philosophy</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>University optional</td></tr>
+                <tr><td>Foreign language - 1 (Georgian)</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>University mandatory</td></tr>
+                <tr><td>Human normal anatomy (locomotor and internal organs anatomy) for dentists</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Introduction of biochemistry</td><td>4.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Medical biology</td><td>3.0</td><td>2022-2023</td><td>Autumn</td><td>Faculty mandatory</td></tr>
+                <tr><td>Biophysics</td><td>3.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td></tr>
+
+                <!-- Semester 2 -->
+                <tr><td>Emergency Medicine</td><td>3.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>Human normal Physiology (General) for dentists</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>Human normal anatomy (cardiovascular system and neuroanatomy) for dentists</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>General biochemistry for dentists</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>Foreign language - 2 (Georgian)</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>University mandatory</td></tr>
+                <tr><td>Special (organs Systems) histology</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>Basics of psychology</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>University optional</td></tr>
+
+                <!-- Semester 3 -->
+                <tr><td>Special biochemistry</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Prevention of dental diseases</td><td>3.0</td><td>2023-2024</td><td>Autumn</td><td>Clinical and Profile Mandatory</td></tr>
+                <tr><td>Introduction of Therapeutic Dentistry</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Clinical and Profile Mandatory</td></tr>
+                <tr><td>Topographic anatomy and operational surgery of the head and neck</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Human normal Physiology (organs systems) for dentists</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Basic Clinical Skills</td><td>3.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>Pathology (General Pathology...)</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td></tr>
+                <tr><td>General microbiology for dentists</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td></tr>
+
+                <!-- Semester 4 -->
+                <tr><td>General Surgery for dentists</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Clinical and Profile Mandatory</td></tr>
+                <tr><td>Immunology for dentists</td><td>3.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>Laboratory medicine</td><td>0.0</td><td>2023-2024</td><td>Spring</td><td>Faculty mandatory</td></tr>
+                <tr><td>Sociology</td><td>3.0</td><td>2023-2024</td><td>Spring</td><td>Faculty optional</td></tr>
+                <tr><td>Introduction of prosthodontic dentistry</td><td>5.0</td><td>2023-2024</td><td>Spring</td><td>Clinical and Profile Mandatory</td></tr>
+                <tr><td>Phantom Operative Odontology</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Clinical and Profile Mandatory</td></tr>
+                <tr><td>Special microbiology</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>General Pharmacology for dentists</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td></tr>
+                <tr><td>Pathology (Tumor growth...)</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td></tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
