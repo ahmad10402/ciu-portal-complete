@@ -95,5 +95,10 @@
     </tr>
 
   </table>
-</body>
+</<script>
+  const isLoggedIn = localStorage.getItem("loggedInUser");
+  if (!isLoggedIn) {
+    window.location.href = "login.html";
+  }
+</script>>
 </html>
