@@ -11,53 +11,44 @@
       background-color: #f8f9fa;
     }
 
-    .topbar {
+    .top-info {
       background-color: #202020;
       color: white;
       padding: 10px 20px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
     }
 
-    .topbar .menu {
-      display: flex;
-      gap: 20px;
+    .top-info div {
+      background-color: #343a40;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-size: 14px;
     }
 
-    .topbar .menu a {
+    .top-info .active {
+      background-color: #28a745;
       color: white;
+      font-weight: bold;
+    }
+
+    .menu {
+      background-color: #343a40;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .menu a {
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
 
     .container {
       padding: 20px;
-    }
-
-    .student-info {
-      background-color: #343a40;
-      color: white;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .student-info div {
-      background-color: #495057;
-      padding: 10px 15px;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    .student-info .active {
-      background-color: #28a745;
-      color: white;
-      font-weight: bold;
     }
 
     .messages {
@@ -73,49 +64,43 @@
     }
 
     .message {
-      padding: 10px;
-      border-radius: 6px;
+      padding: 12px;
       margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       font-size: 14px;
     }
 
     .message.red {
-      background-color: #f8d7da;
       color: #dc3545;
-      border-left: 5px solid #dc3545;
     }
 
     .message.green {
-      background-color: #d4edda;
       color: #28a745;
-      border-left: 5px solid #28a745;
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div><img src="ciu-logo.png" alt="CIU Logo" style="height:40px;"></div>
-    <div class="menu">
-      <a href="#">Grades</a>
-      <a href="#">Student Profile</a>
-      <a href="#">Schedule</a>
-      <a href="#">Selected Courses</a>
-      <a href="#">Logout</a>
-    </div>
+  <div class="top-info">
+    <div><strong>Name:</strong> Muhammad Younes</div>
+    <div class="active">Active Student</div>
+    <div><strong>University:</strong> Caucasus International University</div>
+    <div><strong>Faculty:</strong> Dentistry</div>
+    <div><strong>Year:</strong> 2024–2025</div>
+    <div><strong>GPA:</strong> 2.9</div>
+    <div><strong>Balance:</strong> 0.00 USD</div>
+  </div>
+
+  <div class="menu">
+    <a href="#">Grades</a>
+    <a href="#">Student Profile</a>
+    <a href="#">Schedule</a>
+    <a href="#">Selected Courses</a>
+    <a href="#">Logout</a>
   </div>
 
   <div class="container">
-    <div class="student-info">
-      <div><strong>Name:</strong> Muhammad Younes</div>
-      <div class="active">Active Student</div>
-      <div><strong>University:</strong> Caucasus International University</div>
-      <div><strong>Faculty:</strong> Dentistry</div>
-      <div><strong>Year:</strong> 2024–2025</div>
-      <div><strong>GPA:</strong> 2.9</div>
-      <div><strong>Balance:</strong> 0.00 USD</div>
-    </div>
-
     <div class="messages">
       <h2>University Messages</h2>
       <div class="message red">New semester starts on September 2, 2025.</div>
