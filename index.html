@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CIU Student Portal</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CIU | Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header style="text-align:center; padding: 20px;">
-    <img src="ciu-logo.png" alt="CIU Logo" style="width: 100px;">
-    <h1 style="color:#800000;">Caucasus International University</h1>
-  </header>
+  <div class="login-container">
+    <img src="ciu-logo.png" alt="CIU Logo" class="logo" />
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Enter your university email" />
+    <input type="password" id="password" placeholder="Enter your password" />
+    <button onclick="login()">Login</button>
+  </div>
 
-  <main style="text-align:center; margin-top:50px;">
-    <h2>Welcome to the CIU Portal</h2>
-    <p>Please <a href="login.html">login</a> to access your account.</p>
-  </main>
+  <script>
+    function login() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-  <footer style="text-align:center; margin-top:60px; font-size:14px; color:gray;">
-    &copy; 2025 Caucasus International University
-  </footer>
+      if (email === "mohammad.youness@ciu.edu.ge" && password === "CIU.545978") {
+        localStorage.setItem("authenticated", "true");
+        localStorage.setItem("userEmail", email);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid email or password.");
+      }
+    }
+  </script>
 </body>
 </html>
