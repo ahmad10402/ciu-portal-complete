@@ -7,100 +7,94 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
     }
 
-    .top-bar {
-      background-color: #111;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .top-bar .nav-links a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .top-bar .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    .student-info-bar {
-      background-color: #1f1f1f;
-      color: white;
-      padding: 10px 20px;
+    .top-info {
       display: flex;
       flex-wrap: wrap;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 10px 20px;
       justify-content: space-between;
-      align-items: center;
     }
 
-    .student-info-bar .info-box {
-      margin: 5px 10px;
-      background-color: #2f2f2f;
-      padding: 8px 12px;
+    .info-box {
+      margin: 5px;
+      background-color: #2e2e2e;
+      padding: 8px 14px;
       border-radius: 5px;
+      font-size: 14px;
     }
 
-    .student-info-bar .active {
+    .info-box.green {
       background-color: #28a745;
+      color: white;
       font-weight: bold;
     }
 
-    .content {
+    .nav-bar {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px 0;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-bar a:hover {
+      color: #ff3333;
+    }
+
+    .container {
       padding: 20px;
     }
 
-    .messages {
-      max-width: 800px;
-      margin: 0 auto;
+    .messages-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
 
-    .messages h2 {
-      color: #800000;
+    h2 {
+      color: #990000;
       margin-bottom: 15px;
     }
 
     .message {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 10px 15px;
       border-radius: 5px;
-      background-color: #f2f2f2;
-      font-weight: 500;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
     }
 
     .message.red {
       color: #cc0000;
+      font-weight: bold;
     }
 
     .message.green {
-      color: #2e8b57;
+      color: #28a745;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    <img src="ciu-logo.png" alt="CIU Logo" height="40" />
-    <div class="nav-links">
-      <a href="grades.html">Grades</a>
-      <a href="profile.html">Student Profile</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="selected-courses.html">Selected Courses</a>
-      <a href="login.html">Logout</a>
-    </div>
-  </div>
-
-  <div class="student-info-bar">
+  <!-- المعلومات الأفقية -->
+  <div class="top-info">
     <div class="info-box"><strong>Name:</strong> Muhammad Younes</div>
-    <div class="info-box active">Active Student</div>
+    <div class="info-box green">Active Student</div>
     <div class="info-box"><strong>University:</strong> Caucasus International University</div>
     <div class="info-box"><strong>Faculty:</strong> Dentistry</div>
     <div class="info-box"><strong>Year:</strong> 2024–2025</div>
@@ -108,8 +102,18 @@
     <div class="info-box"><strong>Balance:</strong> 0.00 USD</div>
   </div>
 
-  <div class="content">
-    <div class="messages">
+  <!-- شريط التنقل -->
+  <div class="nav-bar">
+    <a href="grades.html">Grades</a>
+    <a href="profile.html">Student Profile</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="selected-courses.html">Selected Courses</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <!-- الرسائل -->
+  <div class="container">
+    <div class="messages-box">
       <h2>University Messages</h2>
       <div class="message red">New semester starts on September 2, 2025.</div>
       <div class="message red">Exam schedule will be published soon.</div>
@@ -119,7 +123,7 @@
       <div class="message green">Dentistry conference on July 10, 2025.</div>
       <div class="message red">Midterm exams start August 14.</div>
       <div class="message green">Summer course applications now open.</div>
-      <div class="message green">COVID-19 safety rules updated.</div>
+      <div class="message red">COVID-19 safety rules updated.</div>
       <div class="message red">Dormitory fee payment deadline extended.</div>
     </div>
   </div>
