@@ -2,76 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CIU | Dashboard</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      background-color: #f4f4f4;
+      display: flex;
     }
 
     .sidebar {
       width: 200px;
-      height: 100vh;
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
       border-right: 1px solid #ccc;
+      height: 100vh;
     }
 
     .sidebar img {
-      width: 80px;
-      margin-bottom: 30px;
+      width: 100px;
+      display: block;
+      margin: 0 auto 20px;
     }
 
     .sidebar a {
       display: block;
-      color: #333;
+      margin: 10px 0;
       text-decoration: none;
-      margin-bottom: 20px;
+      color: #222;
       font-weight: bold;
     }
 
-    .sidebar a:hover {
-      color: #800000;
-    }
-
     .main-content {
-      margin-left: 220px;
+      flex-grow: 1;
       padding: 20px;
     }
 
     .student-info {
+      background-color: #3a3a3a;
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
     }
 
-    .info-item {
-      background-color: #f0f0f0;
-      padding: 8px 12px;
+    .student-info div {
+      background-color: #555;
+      padding: 6px 10px;
       border-radius: 5px;
-      font-size: 14px;
     }
 
-    .info-item.green {
+    .student-info .active {
       background-color: #28a745;
-      color: #fff;
     }
 
     .messages {
-      background-color: #ffffff;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      margin-top: 20px;
     }
 
     .messages h2 {
@@ -79,11 +67,10 @@
     }
 
     .message {
-      border: 1px solid #ccc;
       padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      font-size: 14px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
 
     .message.red {
@@ -91,7 +78,7 @@
     }
 
     .message.green {
-      color: #006600;
+      color: #008000;
     }
   </style>
 </head>
@@ -102,18 +89,18 @@
     <a href="profile.html">Student Profile</a>
     <a href="schedule.html">Schedule</a>
     <a href="selected-courses.html">Selected Courses</a>
-    <a href="login.html" onclick="localStorage.removeItem('loggedInUser')">Logout</a>
+    <a href="login.html">Logout</a>
   </div>
 
   <div class="main-content">
     <div class="student-info">
-      <div class="info-item"><strong>Name:</strong> Muhammad Younes</div>
-      <div class="info-item green"><strong>Active Student</strong></div>
-      <div class="info-item"><strong>University:</strong> Caucasus International University</div>
-      <div class="info-item"><strong>Faculty:</strong> Dentistry</div>
-      <div class="info-item"><strong>Year:</strong> 2024–2025</div>
-      <div class="info-item"><strong>GPA:</strong> 2.9</div>
-      <div class="info-item"><strong>Balance:</strong> 0.00 USD</div>
+      <div><strong>Name:</strong> Muhammad Younes</div>
+      <div class="active">Active Student</div>
+      <div><strong>University:</strong> Caucasus International University</div>
+      <div><strong>Faculty:</strong> Dentistry</div>
+      <div><strong>Year:</strong> 2024–2025</div>
+      <div><strong>GPA:</strong> 2.9</div>
+      <div><strong>Balance:</strong> 0.00 USD</div>
     </div>
 
     <div class="messages">
@@ -127,11 +114,5 @@
       <div class="message red">Midterm exams start August 14.</div>
     </div>
   </div>
-
-  <script>
-    if (!localStorage.getItem("loggedInUser")) {
-      window.location.href = "login.html";
-    }
-  </script>
 </body>
 </html>
