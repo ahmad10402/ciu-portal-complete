@@ -1,140 +1,90 @@
-
+Rabe33, [6/29/2025 7:26 AM]
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Grades</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="grades-container">
-        <h2>Student Grades</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Credits</th>
-                    <th>Year</th>
-                    <th>Semester</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-            <tbody>
-              
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grades</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grades - CIU Student Portal</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 20px;
+      margin: 40px;
+      background-color: #f9f9f9;
     }
-    h2 {
+    h1 {
       text-align: center;
-      color: #333;
+      color: #003366;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 40px;
-      background-color: #fff;
+      margin-top: 30px;
     }
     th, td {
       border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
+      padding: 10px;
+      text-align: center;
     }
     th {
-      background-color: #eaeaea;
+      background-color: #e0eaff;
+      color: #003366;
+    }
+    td.subject {
+      color: #d9534f; /* أحمر فاتح */
+      font-weight: bold;
     }
   </style>
-  .subject {
-    color: darkred;
-    font-weight: bold;
-  }
-</style>
 </head>
-<<h2>Semester Grades</h2>
-<table>
-  <tr>
-    <th>Subject</th>
-    <th>Credits</th>
-    <th>Grade</th>
-  </tr>
-  <tr>
-    <td class="subject">Human Anatomy</td>
-    <td>4.0</td>
-    <td>78</td>
-  </tr>
-  <tr>
-    <td class="subject">Biochemistry</td>
-    <td>3.0</td>
-    <td>85</td>
-  </tr>
-  <tr>
-    <td class="subject">Physiology</td>
-    <td>5.0</td>
-    <td>74</td>
-  </tr>
-</table>>
+<body>
+  <h1>Student Grades</h1>
+  <table>
+    <tr>
+      <th>Subject</th>
+      <th>Credits</th>
+      <th>Year</th>
+      <th>Semester</th>
+      <th>Type</th>
+      <th>Grade</th>
+    </tr>
 
-<h2>Semester 1</h2>
-<table>
-  <tr><th>Subject</th><th>Credits</th><th>Year</th><th>Semester</th><th>Type</th><th>Grade</th></tr>
-  <tr><td>General histology, with cytology</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Basics of philosophy</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>University optional</td><td></td></tr>
-  <tr><td>Foreign language - 1 (Georgian)</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>University mandatory</td><td></td></tr>
-  <tr><td>Human normal anatomy (locomotor and internal organs anatomy) for dentists</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Introduction of biochemistry</td><td>4.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Medical biology</td><td>3.0</td><td>2022-2023</td><td>Autumn</td><td>Faculty mandatory</td><td></td></tr>
-  <tr><td>Biophysics</td><td>3.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-</table>
+    <!-- Semester 1 -->
+    <tr><td class="subject">General histology, with cytology</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td>87</td></tr>
+    <tr><td class="subject">Basics of philosophy</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>University optional</td><td>84</td></tr>
+    <tr><td class="subject">Foreign language - 1 (Georgian)</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>University mandatory</td><td>82</td></tr>
+    <tr><td class="subject">Human normal anatomy (locomotor and internal organs anatomy)</td><td>5.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td>85</td></tr>
+    <tr><td class="subject">Introduction of biochemistry</td><td>4.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td>80</td></tr>
+    <tr><td class="subject">Medical biology</td><td>3.0</td><td>2022-2023</td><td>Autumn</td><td>Faculty mandatory</td><td>86</td></tr>
+    <tr><td class="subject">Biophysics</td><td>3.0</td><td>2022-2023</td><td>Autumn</td><td>Basic mandatory</td><td>88</td></tr>
 
-<h2>Semester 2</h2>
-<table>
-  <tr><th>Subject</th><th>Credits</th><th>Year</th><th>Semester</th><th>Type</th><th>Grade</th></tr>
-  <tr><td>Emergency Medicine</td><td>3.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Human normal Physiology (General) for dentists</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Human normal anatomy (cardiovascular system and neuroanatomy) for dentists</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>General biochemistry for dentists</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Foreign language - 2 (Georgian)</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>University mandatory</td><td></td></tr>
-  <tr><td>Special (organs Systems) histology</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Basics of psychology</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>University optional</td><td></td></tr>
-</table>
+    <!-- Semester 2 -->
+    <tr><td class="subject">Emergency Medicine</td><td>3.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td>89</td></tr>
+    <tr><td class="subject">Human normal Physiology (General)</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td>87</td></tr>
+    <tr><td class="subject">Human normal anatomy (cardiovascular & neuroanatomy)</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td>85</td></tr>
+    <tr><td class="subject">General biochemistry</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td>80</td></tr>
+    <tr><td class="subject">Foreign language - 2 (Georgian)</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>University mandatory</td><td>83</td></tr>
+    <tr><td class="subject">Special (organs Systems) histology</td><td>4.0</td><td>2022-2023</td><td>Spring</td><td>Basic mandatory</td><td>84</td></tr>
+    <tr><td class="subject">Basics of psychology</td><td>5.0</td><td>2022-2023</td><td>Spring</td><td>University optional</td><td>86</td></tr>
 
-<h2>Semester 3</h2>
-<table>
-  <tr><th>Subject</th><th>Credits</th><th>Year</th><th>Semester</th><th>Type</th><th>Grade</th></tr>
-  <tr><td>Special biochemistry</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Prevention of dental diseases</td><td>3.0</td><td>2023-2024</td><td>Autumn</td><td>Clinical and Profile Mandatory</td><td></td></tr>
-  <tr><td>Introduction of Therapeutic Dentistry</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Clinical and Profile Mandatory</td><td></td></tr>
-  <tr><td>Topographic anatomy and operational surgery of the head and neck</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Human normal Physiology (organs systems) for dentists</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Basic Clinical Skills</td><td>3.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Pathology (General Pathology...)</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>General microbiology for dentists</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td></td></tr>
-</table>
+    <!-- Semester 3 -->
+    <tr><td class="subject">Special biochemistry</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td>70</td></tr>
+    <tr><td class="subject">Prevention of dental diseases</td><td>3.0</td><td>2023-2024</td><td>Autumn</td><td>Clinical/Profile mandatory</td><td>78</td></tr>
+    <tr><td class="subject">Introduction of Therapeutic Dentistry</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Clinical/Profile mandatory</td><td>73</td></tr>
+    <tr><td class="subject">Topographic anatomy and surgery of head/neck</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td>75</td></tr>
+    <tr><td class="subject">Human normal Physiology (organ systems)</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td>69</td></tr>
+    <tr><td class="subject">Basic Clinical Skills</td><td>3.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td>67</td></tr>
+    <tr><td class="subject">Pathology (General/Inflammation/Fever etc)</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td>60</td></tr>
+    <tr><td class="subject">General microbiology</td><td>4.0</td><td>2023-2024</td><td>Autumn</td><td>Basic mandatory</td><td>50</td></tr>
 
-<h2>Semester 4</h2>
-<table>
-  <tr><th>Subject</th><th>Credits</th><th>Year</th><th>Semester</th><th>Type</th><th>Grade</th></tr>
-  <tr><td>Immunology for dentists</td><td>3.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Laboratory medicine</td><td>0.0</td><td>2023-2024</td><td>Spring</td><td>Faculty mandatory</td><td></td></tr>
-  <tr><td>Sociology</td><td>3.0</td><td>2023-2024</td><td>Spring</td><td>Faculty optional</td><td></td></tr>
-  <tr><td>Introduction of prosthodontic dentistry</td><td>5.0</td><td>2023-2024</td><td>Spring</td><td>Clinical and Profile Mandatory</td><td></td></tr>
-  <tr><td>Phantom Operative Odontology</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Clinical and Profile Mandatory</td><td></td></tr>
-  <tr><td>Special microbiology</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>General Pharmacology for dentists</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-  <tr><td>Pathology (Tumor growth...)</td><td>4.0</td><td>2023-2024</td><td>Spring</td><td>Basic mandatory</td><td></td></tr>
-</table>
+    <!-- Semester 4 -->
+    <tr><td class="subject">Immunology for dentists</td><td>4.0</td><td>2024-2025</td><td>Winter</td><td>Basic mandatory</td><td>82</td></tr>
+    <tr><td class="subject">Laboratory medicine</td><td>5.0</td><td>2024-2025</td><td>Winter</td><td>Faculty mandatory</td><td>87</td></tr>
+    <tr><td class="subject">Sociology</td><td>3.0</td><td>2024-2025</td><td>Spring</td><td>Faculty optional</td><td>50/60</td></tr>
+    <tr><td class="subject">Introduction of prosthodontic dentistry</td><td>5.0</td><td>2024-2025</td><td>Spring</td><td>Clinical/Profile mandatory</td><td>45/60</td></tr>
+    <tr><td class="subject">Phantom Operative Odontology</td><td>4.0</td><td>2024-2025</td><td>Spring</td><td>Clinical/Profile mandatory</td><td>53/60</td></tr>
+    <tr><td class="subject">Special microbiology</td><td>4.0</td><td>2024-2025</td><td>Spring</td><td>Basic mandatory</td><td>47/60</td></tr>
+    <tr><td class="subject">General Pharmacology</td><td>4.0</td><td>2024-2025</td><td>Spring</td><td>Basic mandatory</td><td>49/60</td></tr>
+    <tr><td class="subject">Pathology (Tumor growth, metabolism)</td><td>4.0</td><td>2024-2025</td><td>Spring</td><td>Basic mandatory</td><td>42/60</td></tr>
 
+  </table>
 </body>
 </html>
