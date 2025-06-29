@@ -1,33 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CIU | Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Redirect</title>
+  <meta http-equiv="refresh" content="0; URL=dashboard.html" />
 </head>
 <body>
-  <div class="login-container">
-    <img src="ciu-logo.png" alt="CIU Logo" class="logo" />
-    <h2>Login</h2>
-    <input type="email" id="email" placeholder="Enter your university email" />
-    <input type="password" id="password" placeholder="Enter your password" />
-    <button onclick="login()">Login</button>
-  </div>
-
-  <script>
-    function login() {
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-
-      if (email === "mohammad.youness@ciu.edu.ge" && password === "CIU.545978") {
-        localStorage.setItem("authenticated", "true");
-        localStorage.setItem("userEmail", email);
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Invalid email or password.");
-      }
-    }
-  </script>
+  <p>Redirecting to <a href="dashboard.html">dashboard</a>...</p>
 </body>
 </html>
