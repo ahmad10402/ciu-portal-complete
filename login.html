@@ -1,28 +1,48 @@
-<!-- login.html -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("9HJzhU4tNlYEhC8J2"); // المفتاح الجديد
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CIU | Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <img src="ciu-logo.png" alt="CIU Logo" class="logo" />
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Enter your university email" />
+    <button onclick="sendCode()">Login by E-Mail</button>
+  </div>
 
-  function sendVerificationCode() {
-    const emailInput = document.getElementById("email").value;
-    const verificationCode = Math.floor(100000 + Math.random() * 900000); // كود مكون من 6 أرقام
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("9HJzhU4tNlYEhC8J2"); // Public Key
 
-    // خزنه مؤقتًا لصفحة التحقق
-    localStorage.setItem("verificationCode", verificationCode);
-    localStorage.setItem("email", emailInput);
+    function sendCode() {
+      const email = document.getElementById("email").value.trim();
+      if (!email || !email.includes("@")) {
+        alert("Please enter a valid email.");
+        return;
+      }
 
-    const templateParams = {
-      to_email: emailInput,
-      code: verificationCode
-    };
+      const code = Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem("verificationCode", code);
+      localStorage.setItem("userEmail", email);
 
-    emailjs.send("service_wmnso5l", "template_90zrpeq", templateParams)
-      .then(function(response) {
-        console.log("SUCCESS!", response.status, response.text);
-        window.location.href = "verify.html"; // انتقل لصفحة إدخال الكود
-      }, function(error) {
-        console.log("FAILED...", error);
-        alert("Failed to send code. Please try again.");
-      });
-  }
-</script>
+      const templateParams = {
+        to_email: email,
+        code: code,
+      };
+
+      emailjs.send("service_wmnso5l", "template_90zrpeq", templateParams)
+        .then(() => {
+          window.location.href = "verify.html";
+        })
+        .catch((error) => {
+          console.error("Failed to send code:", error);
+          alert("Failed to send code. Please try again.");
+        });
+    }
+  </script>
+</body>
+</html>
