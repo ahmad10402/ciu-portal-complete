@@ -2,103 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CIU Student Dashboard</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
     }
-    header {
-      background-color: #1a1a1a;
+    .navbar {
+      background-color: #1c1c1c;
       color: white;
-      padding: 15px 20px;
+      padding: 15px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
+    .navbar img {
       height: 40px;
-      margin-right: 15px;
     }
-    nav a {
-      margin-left: 20px;
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
     .container {
       padding: 30px;
     }
-    h2 {
+    .box {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .box h2 {
+      color: #333;
+      margin-top: 0;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .info-label {
+      font-weight: bold;
       color: #003366;
     }
-    .info-box {
-      background-color: #eef4ff;
-      padding: 20px;
-      border: 1px solid #ccc;
-      margin-bottom: 30px;
+    .info-value {
+      margin-left: 10px;
     }
-    .info-box p {
-      margin: 10px 0;
-      font-size: 16px;
-    }
-    .info-box span.label {
-      font-weight: bold;
-    }
-    .status {
+    .active-status {
       color: green;
       font-weight: bold;
     }
-    .messages {
-      background-color: #fff;
-      padding: 20px;
-      border: 1px solid #ccc;
+    .balance {
+      color: green;
     }
-    .messages ul {
-      list-style: square;
+    ul.messages {
       padding-left: 20px;
+    }
+    ul.messages li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="ciu-logo.png" alt="CIU Logo" />
-      <span>Learning Management System</span>
-    </div>
-    <nav>
+  <div class="navbar">
+    <img src="logo.png" alt="CIU Logo" />
+    <div class="nav-links">
       <a href="grades.html">Grades</a>
       <a href="profile.html">Student Profile</a>
       <a href="selected-courses.html">Selected Courses</a>
       <a href="schedule.html">Schedule</a>
-      <a href="index.html" onclick="logout()">Logout</a>
-    </nav>
-  </header>
+      <a href="login.html">Logout</a>
+    </div>
+  </div>
 
   <div class="container">
-    <div class="info-box">
+    <div class="box">
       <h2>Student Information</h2>
-      <p><span class="label">Name:</span> Muhammad Younes</p>
-      <p><span class="label">Student Status:</span> <span class="status">Active student</span></p>
-      <p><span class="label">University:</span> Caucasus International University</p>
-      <p><span class="label">Faculty:</span> Dentistry</p>
-      <p><span class="label">Academic Year:</span> 2024-2025</p>
-      <p><span class="label">GPA:</span> 2.9</p>
-      <p><span class="label">Balance:</span> <span style="color:green;">0.00 USD</span></p>
+      <div class="info-grid">
+        <div><span class="info-label">Name:</span><span class="info-value">Muhammad Younes</span></div>
+        <div><span class="info-label">Student Status:</span><span class="info-value active-status">Active student</span></div>
+        <div><span class="info-label">University:</span><span class="info-value">Caucasus International University</span></div>
+        <div><span class="info-label">Faculty:</span><span class="info-value">Dentistry</span></div>
+        <div><span class="info-label">Academic Year:</span><span class="info-value">2024-2025</span></div>
+        <div><span class="info-label">GPA:</span><span class="info-value">2.9</span></div>
+        <div><span class="info-label">Balance:</span><span class="info-value balance">0.00 USD</span></div>
+      </div>
     </div>
 
-    <div class="messages">
+    <div class="box">
       <h2>University Messages</h2>
-      <ul>
+      <ul class="messages">
         <li>New semester starts on September 2, 2025.</li>
         <li>Exam schedule will be published soon.</li>
         <li>Library access renewed until end of semester.</li>
@@ -106,23 +106,11 @@
         <li>New student ID cards available.</li>
         <li>Check your CIU email regularly for updates.</li>
         <li>Midterm grades will be available next week.</li>
-        <li>Academic advising begins October 10.</li>
-        <li>Online lectures continue until November.</li>
-        <li>Workshops registration is now open.</li>
+        <li>University event on October 10th, 2025.</li>
+        <li>All students must update their contact info.</li>
+        <li>Advising sessions start next Monday.</li>
       </ul>
     </div>
   </div>
-
-  <script>
-    function logout() {
-      localStorage.removeItem("authenticated");
-      window.location.href = "index.html";
-    }
-
-    const user = localStorage.getItem("authenticated");
-    if (!user) {
-      window.location.href = "index.html";
-    }
-  </script>
 </body>
 </html>
