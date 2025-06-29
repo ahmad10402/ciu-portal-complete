@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CIU Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <title>CIU | Dashboard</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #000;
+      background-color: #fff;
     }
 
     .sidebar {
-      width: 220px;
-      background-color: #000;
-      color: #fff;
+      width: 200px;
+      background-color: #111;
       height: 100vh;
       position: fixed;
+      color: white;
       padding-top: 20px;
     }
 
+    .sidebar img {
+      display: block;
+      margin: 0 auto 10px;
+      width: 60px;
+    }
+
     .sidebar h2 {
+      color: #c00;
+      font-size: 16px;
       text-align: center;
       margin-bottom: 20px;
     }
@@ -30,130 +36,112 @@
     .sidebar a {
       display: block;
       color: #fff;
-      padding: 12px 20px;
+      padding: 10px 20px;
       text-decoration: none;
-      transition: background 0.3s;
     }
 
     .sidebar a:hover {
-      background-color: #444;
+      background-color: #c00;
     }
 
-    .main {
-      margin-left: 240px;
+    .main-content {
+      margin-left: 200px;
       padding: 20px;
     }
 
-    .dropdown {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-
-    .dropdown h3 {
-      margin: 0 0 10px;
-      cursor: pointer;
-      background-color: #eee;
-      padding: 10px;
-    }
-
-    .dropdown-content {
-      display: none;
-      padding-left: 10px;
-    }
-
-    .dropdown-content p {
-      margin: 8px 0;
-    }
-
-    .dropdown.active .dropdown-content {
-      display: block;
-    }
-
-    .badge {
-      background-color: #28a745;
+    .info-bar {
+      background-color: #222;
       color: white;
-      padding: 3px 8px;
-      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 5px 10px;
+      font-size: 14px;
+    }
+
+    .info-item span {
+      background-color: #555;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    .alert-box {
+      background-color: #e6ffe6;
+      color: #007a00;
+      padding: 10px;
+      margin: 20px 0;
+      border: 1px solid #80d480;
+      text-align: center;
+      font-weight: bold;
     }
 
     .messages {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .messages h3 {
-      color: #b30000;
-      border-bottom: 2px solid #b30000;
+      color: #900;
+      border-bottom: 2px solid #c00;
       padding-bottom: 5px;
     }
 
-    .message-box {
+    .messages .msg {
       border: 1px solid #ccc;
       padding: 10px;
-      margin-top: 10px;
-      background-color: #f2f2f2;
-    }
-
-    .balance {
-      color: green;
-    }
-
-    .logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .logo img {
-      max-width: 80px;
+      margin: 5px 0;
+      background-color: #f9f9f9;
     }
   </style>
 </head>
 <body>
+
   <div class="sidebar">
-    <div class="logo">
-      <img src="ciu-logo.png" alt="CIU Logo" />
-    </div>
+    <img src="ciu-logo.png" alt="CIU Logo">
+    <h2>Learning Management System</h2>
     <a href="grades.html">Grades</a>
     <a href="profile.html">Student Profile</a>
     <a href="schedule.html">Schedule</a>
-    <a href="selected.html">Selected Courses</a>
+    <a href="selected-courses.html">Selected Courses</a>
     <a href="login.html">Logout</a>
   </div>
 
-  <div class="main">
-    <div class="dropdown" onclick="this.classList.toggle('active')">
-      <h3>Student Information &#9662;</h3>
-      <div class="dropdown-content">
-        <p><strong>Name:</strong> Muhammad Younes</p>
-        <p><strong>Student Status:</strong> <span class="badge">Active student</span></p>
-        <p><strong>University:</strong> Caucasus International University</p>
-        <p><strong>Faculty:</strong> Dentistry</p>
-        <p><strong>Academic Year:</strong> 2024–2025</p>
-        <p><strong>GPA:</strong> 2.9</p>
-        <p><strong>Balance:</strong> <span class="balance">0.00 USD</span></p>
-      </div>
+  <div class="main-content">
+    <div class="info-bar">
+      <div class="info-item">GPA: <span>2.9</span></div>
+      <div class="info-item">Balance: <span style="background-color: #090;">0.00 USD</span></div>
+      <div class="info-item">Student: <span>Muhammad Younes</span></div>
+      <div class="info-item">Group: <span>OM2203STen_I</span></div>
+      <div class="info-item">Status: <span style="background-color: #0c0;">Active Student</span></div>
+      <div class="info-item">Messages: <span>0</span></div>
+    </div>
+
+    <div class="alert-box">
+      You are an active student with full access to the portal.
     </div>
 
     <div class="messages">
       <h3>University Messages</h3>
-      <div class="message-box">New semester starts on September 2, 2025.</div>
-      <div class="message-box">Exam schedule will be published soon.</div>
-      <div class="message-box">Library access renewed until end of semester.</div>
-      <div class="message-box">Submit lab reports by Friday.</div>
-      <div class="message-box">New student ID cards available.</div>
-      <div class="message-box">Dentistry conference on July 10, 2025.</div>
-      <div class="message-box">Midterm exams start August 14.</div>
-      <div class="message-box">Summer course applications now open.</div>
-      <div class="message-box">COVID-19 safety rules updated.</div>
-      <div class="message-box">Dormitory fee payment deadline extended.</div>
+      <div class="msg">New semester starts on September 2, 2025.</div>
+      <div class="msg">Exam schedule will be published soon.</div>
+      <div class="msg">Library access renewed until end of semester.</div>
+      <div class="msg">Submit lab reports by Friday.</div>
+      <div class="msg">New student ID cards available.</div>
+      <div class="msg">Dentistry conference on July 10, 2025.</div>
+      <div class="msg">Midterm exams start August 14.</div>
+      <div class="msg">Summer course applications now open.</div>
+      <div class="msg">COVID-19 safety rules updated.</div>
+      <div class="msg">Dormitory fee payment deadline extended.</div>
     </div>
   </div>
 
-  <script>
-    document.querySelector('.dropdown h3').addEventListener('click', function () {
-      this.parentElement.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
