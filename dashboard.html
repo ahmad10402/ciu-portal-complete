@@ -1,30 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>
-    const user = localStorage.getItem("authenticated");
-    if (!user) window.location.href = "index.html";
-
-    function logout() {
-      localStorage.removeItem("authenticated");
-      localStorage.removeItem("userEmail");
-      window.location.href = "index.html";
+  <meta charset="UTF-8">
+  <title>CIU Student Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 0;
     }
-  </script>
+
+    .header {
+      background-color: #1c1c1c;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tag {
+      background-color: gray;
+      color: white;
+      border-radius: 10px;
+      padding: 3px 10px;
+      font-size: 13px;
+    }
+
+    .balance {
+      background-color: #4caf50;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .status-bar {
+      background-color: #fdd;
+      color: #a00;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .section-title {
+      background-color: #eee;
+      padding: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .menu {
+      margin-top: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .menu a {
+      display: block;
+      padding: 12px;
+      color: #b30000;
+      border-bottom: 1px solid #ddd;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .messages {
+      margin-top: 25px;
+    }
+
+    .messages div {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .messages .red {
+      color: #b30000;
+    }
+
+    .messages .green {
+      color: #2e7d32;
+    }
+  </style>
 </head>
 <body>
-  <div class="dashboard-container">
-    <img src="ciu-logo.png" alt="CIU Logo" class="logo-small" />
-    <h2>Welcome, Student</h2>
-    <ul>
-      <li><a href="profile.html">Student Profile</a></li>
-      <li><a href="grades.html">Grades</a></li>
-      <li><a href="transcript.html">Transcript</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><button onclick="logout()">Logout</button></li>
-    </ul>
+
+  <div class="header">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/09/Caucasus_International_University_logo.png" alt="CIU Logo">
+      <strong>Learning Management System</strong>
+    </div>
+    <div class="user-info">
+      <span class="tag">GPA 2.90</span>
+      <span class="tag">OM2203STen_I</span>
+      <span class="balance">0.00 USD</span>
+      <span class="tag">Muhammad Younes</span>
+    </div>
   </div>
+
+  <div class="status-bar">
+    You are an active student. Welcome to your CIU portal.
+  </div>
+
+  <div class="content">
+
+    <div class="section-title">Spring semester 2024–2025</div>
+    <div style="margin-top: 10px; font-size: 14px;">
+      English-language educational program in dentistry at the Faculty of Medicine
+    </div>
+
+    <div class="section-title">GRADES | STUDENT PROFILE | TRANSCRIPT</div>
+    <div class="menu">
+      <a href="grades.html">Grades</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="transcript.html">Transcript</a>
+    </div>
+
+    <div class="section-title">MESSAGES</div>
+    <div class="messages">
+      <div class="red">Upcoming graduation review will be held on July 10th at the Faculty Board.</div>
+      <div class="red">All students must update their personal information before August 1st.</div>
+      <div class="green">Summer semester registration opens on July 5th, 2025.</div>
+    </div>
+
+  </div>
+
 </body>
 </html>
