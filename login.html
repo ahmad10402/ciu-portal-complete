@@ -11,38 +11,26 @@
     <img src="ciu-logo.png" alt="CIU Logo" class="logo" />
     <h2>Login</h2>
     <input type="email" id="email" placeholder="Enter your university email" />
-    <button onclick="sendCode()">Login by E-Mail</button>
+    <input type="password" id="password" placeholder="Enter your password" />
+    <button onclick="login()">Login</button>
   </div>
 
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    emailjs.init("9HJzhU4tNIYeHC8J2"); // Public Key
-
-    function sendCode() {
+    function login() {
       const email = document.getElementById("email").value.trim();
-      if (!email || !email.includes("@")) {
-        alert("Please enter a valid email.");
-        return;
+      const password = document.getElementById("password").value.trim();
+
+      // بيانات الدخول الصحيحة
+      const validEmail = "mohammad.youness@ciu.edu.ge";
+      const validPassword = "CIU.545978";
+
+      if (email === validEmail && password === validPassword) {
+        localStorage.setItem("userLoggedIn", "true");
+        localStorage.setItem("userEmail", email);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid email or password. Please try again.");
       }
-
-      const code = Math.floor(100000 + Math.random() * 900000);
-      localStorage.setItem("verificationCode", code);
-      localStorage.setItem("userEmail", email);
-
-      const templateParams = {
-        to_email: email,
-        code: code,
-      };
-
-      emailjs.send("service_wmnso5l", "
-__ejs-test-mail-service__", templateParams)
-        .then(() => {
-          window.location.href = "verify.html";
-        })
-        .catch((error) => {
-          console.error("Failed to send code:", error);
-          alert("Failed to send code. Please try again.");
-        });
     }
   </script>
 </body>
