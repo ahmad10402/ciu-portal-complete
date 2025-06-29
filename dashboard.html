@@ -89,7 +89,12 @@
     }
   </style>
 </head>
-<body>
+<<script>
+  const isLoggedIn = localStorage.getItem("loggedInUser");
+  if (!isLoggedIn) {
+    window.location.href = "login.html";
+  }
+</script>>
 
   <!-- المعلومات الأفقية -->
   <div class="top-info">
