@@ -2,131 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CIU | Dashboard</title>
+  <title>Dashboard - CIU Student Portal</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #ffffff;
     }
-
-    .top-bar {
-      background-color: #3a3a3a;
+    .header {
+      background-color: #2f2f2f;
+      color: white;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
-      padding: 10px 20px;
-      color: white;
     }
-
-    .top-bar img {
-      width: 60px;
+    .header img {
+      height: 50px;
       margin-right: 20px;
     }
-
-    .student-info {
+    .header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+    .main {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
     }
-
-    .student-info div {
-      background-color: #555;
-      padding: 6px 10px;
-      border-radius: 5px;
-      font-size: 14px;
+    .sidebar {
+      width: 200px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      min-height: 100vh;
     }
-
-    .student-info .active {
-      background-color: #28a745;
-      color: white;
-    }
-
-    .navbar {
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 12px 0;
-      border-bottom: 1px solid #ccc;
+    .sidebar a {
+      display: block;
+      margin-bottom: 15px;
+      color: #003366;
+      text-decoration: none;
       font-weight: bold;
     }
-
-    .navbar a {
-      text-decoration: none;
-      color: #222;
+    .sidebar a:hover {
+      color: #d9534f;
     }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .main-content {
+    .content {
+      flex: 1;
       padding: 20px;
     }
-
+    .student-info {
+      background-color: #e0e0e0;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .student-info div {
+      margin-bottom: 5px;
+    }
+    .student-info .status {
+      color: green;
+      font-weight: bold;
+    }
     .messages {
       margin-top: 20px;
     }
-
     .messages h2 {
-      color: #800000;
+      margin-bottom: 15px;
+      color: #003366;
     }
-
-    .message {
-      padding: 10px;
-      margin: 5px 0;
+    .message-box {
       border: 1px solid #ccc;
-      border-radius: 6px;
       background-color: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
     }
-
-    .message.red {
-      color: #cc0000;
+    .message-box.red {
+      color: #d9534f;
     }
-
-    .message.green {
-      color: #008000;
+    .message-box.green {
+      color: green;
     }
   </style>
 </head>
 <body>
-
-  <!-- الشريط العلوي -->
-  <div class="top-bar">
+  <div class="header">
     <img src="ciu-logo.png" alt="CIU Logo" />
-    <div class="student-info">
-      <div><strong>Name:</strong> Muhammad Younes</div>
-      <div class="active">Active Student</div>
-      <div><strong>University:</strong> Caucasus International University</div>
-      <div><strong>Faculty:</strong> Dentistry</div>
-      <div><strong>Year:</strong> 2024–2025</div>
-      <div><strong>GPA:</strong> 2.9</div>
-      <div><strong>Balance:</strong> 0.00 USD</div>
+    <h1>Caucasus International University</h1>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <a href="grades.html">Grades</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="courses.html">Selected Courses</a>
+      <a href="logout.html">Logout</a>
+    </div>
+
+    <div class="content">
+      <div class="student-info">
+        <div><strong>Name:</strong> Muhammad Younes</div>
+        <div><strong>University:</strong> CIU</div>
+        <div><strong>Faculty:</strong> Dentistry</div>
+        <div><strong>Year:</strong> 2nd Year</div>
+        <div><strong>GPA:</strong> 2.9</div>
+        <div class="status">Active Student</div>
+      </div>
+
+      <div class="messages">
+        <h2>University Messages</h2>
+        <div class="message-box green">Orientation for new students starts Monday.</div>
+        <div class="message-box red">Deadline for course registration is this Friday!</div>
+        <div class="message-box green">Library is open until 10 PM this week.</div>
+        <div class="message-box red">Parking area under renovation till Thursday.</div>
+        <div class="message-box green">Health insurance renewals available online.</div>
+        <div class="message-box red">Final exam schedule released in portal.</div>
+        <div class="message-box green">Dentistry seminar this Saturday at 11 AM.</div>
+        <div class="message-box red">Late payment fee applies after 10 July.</div>
+        <div class="message-box green">New cafeteria menu now available.</div>
+        <div class="message-box red">No classes next Monday due to holiday.</div>
+      </div>
     </div>
   </div>
-
-  <!-- شريط الروابط -->
-  <div class="navbar">
-    <a href="grades.html">Grades</a>
-    <a href="profile.html">Student Profile</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="selected-courses.html">Selected Courses</a>
-    <a href="login.html">Logout</a>
-  </div>
-
-  <!-- المحتوى -->
-  <div class="main-content">
-    <div class="messages">
-      <h2>University Messages</h2>
-      <div class="message red">New semester starts on September 2, 2025.</div>
-      <div class="message red">Exam schedule will be published soon.</div>
-      <div class="message green">Library access renewed until end of semester.</div>
-      <div class="message red">Submit lab reports by Friday.</div>
-      <div class="message green">New student ID cards available.</div>
-      <div class="message green">Dentistry conference on July 10, 2025.</div>
-      <div class="message red">Midterm exams start August 14.</div>
-    </div>
-  </div>
-
 </body>
 </html>
