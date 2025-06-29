@@ -4,47 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CIU | Login</title>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("9HJzhU4tNlYEhC8J2"); // public key الجديد
-    })();
-  </script>
-  <style>
-    body { font-family: Arial; text-align: center; padding: 50px; }
-    input, button { margin: 10px; padding: 10px; width: 250px; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <img src="ciu-logo.png" alt="CIU Logo" width="150"/>
-  <h2>Login</h2>
-  <input type="email" id="email" value="mohammad.youness@ciu.edu.ge" placeholder="Enter your email" required />
-  <button onclick="sendCode()">Login by E-Mail</button>
+  <div class="login-container">
+    <img src="ciu-logo.png" alt="CIU Logo" class="logo" />
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Enter your university email" />
+    <button onclick="sendCode()">Login by E-Mail</button>
+  </div>
 
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    function generateCode() {
-      return Math.floor(100000 + Math.random() * 900000); // كود من 6 أرقام
-    }
+    emailjs.init("9HJzhU4tNlYEhC8J2"); // Public Key
 
     function sendCode() {
-      const email = document.getElementById("email").value;
-      const code = generateCode();
+      const email = document.getElementById("email").value.trim();
+      if (!email || !email.includes("@")) {
+        alert("Please enter a valid email.");
+        return;
+      }
 
+      const code = Math.floor(100000 + Math.random() * 900000);
       localStorage.setItem("verificationCode", code);
       localStorage.setItem("userEmail", email);
 
       const templateParams = {
         to_email: email,
-        message: Your CIU verification code is: ${code},
+        code: code,
       };
 
       emailjs.send("service_wmnso5l", "template_90zrpeq", templateParams)
-        .then(function(response) {
-          alert("Verification code sent to your email.");
-          window.location.href = "verify.html"; // الانتقال لصفحة التأكيد
-        }, function(error) {
+        .then(() => {
+          window.location.href = "verify.html";
+        })
+        .catch((error) => {
+          console.error("Failed to send code:", error);
           alert("Failed to send code. Please try again.");
-          console.error("EmailJS Error:", error);
         });
     }
   </script>
