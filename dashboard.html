@@ -2,114 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CIU Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIU | Dashboard</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-    .navbar {
       background-color: #1c1c1c;
       color: white;
-      padding: 15px;
+    }
+
+    .header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      background-color: #000;
+      padding: 10px 20px;
     }
-    .navbar img {
+
+    .header img {
       height: 40px;
+      margin-right: 15px;
     }
-    .nav-links {
+
+    .header-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .container {
       display: flex;
-      gap: 20px;
     }
-    .nav-links a {
+
+    .sidebar {
+      width: 200px;
+      background-color: #111;
+      padding-top: 20px;
+      height: 100vh;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
       color: white;
       text-decoration: none;
+      border-bottom: 1px solid #333;
+    }
+
+    .sidebar a:hover {
+      background-color: #c8102e;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+      background-color: #1c1c1c;
+    }
+
+    .info-box {
+      background-color: #2e2e2e;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #e0e0e0;
+    }
+
+    .green {
+      color: #00cc66;
       font-weight: bold;
     }
-    .container {
-      padding: 30px;
-    }
-    .box {
-      background-color: white;
-      border: 1px solid #ccc;
-      padding: 20px;
+
+    .messages {
       margin-top: 20px;
     }
-    .box h2 {
-      color: #333;
-      margin-top: 0;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .info-label {
-      font-weight: bold;
-      color: #003366;
-    }
-    .info-value {
-      margin-left: 10px;
-    }
-    .active-status {
-      color: green;
-      font-weight: bold;
-    }
-    .balance {
-      color: green;
-    }
-    ul.messages {
-      padding-left: 20px;
-    }
-    ul.messages li {
-      margin-bottom: 8px;
+
+    .message {
+      background-color: #2e2e2e;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-left: 5px solid #c8102e;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo.png" alt="CIU Logo" />
-    <div class="nav-links">
-      <a href="grades.html">Grades</a>
-      <a href="profile.html">Student Profile</a>
-      <a href="selected-courses.html">Selected Courses</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="login.html">Logout</a>
-    </div>
+  <div class="header">
+    <img src="ciu-logo.png" alt="CIU Logo" />
+    <div class="header-title">Learning Management System</div>
   </div>
 
   <div class="container">
-    <div class="box">
-      <h2>Student Information</h2>
-      <div class="info-grid">
-        <div><span class="info-label">Name:</span><span class="info-value">Muhammad Younes</span></div>
-        <div><span class="info-label">Student Status:</span><span class="info-value active-status">Active student</span></div>
-        <div><span class="info-label">University:</span><span class="info-value">Caucasus International University</span></div>
-        <div><span class="info-label">Faculty:</span><span class="info-value">Dentistry</span></div>
-        <div><span class="info-label">Academic Year:</span><span class="info-value">2024-2025</span></div>
-        <div><span class="info-label">GPA:</span><span class="info-value">2.9</span></div>
-        <div><span class="info-label">Balance:</span><span class="info-value balance">0.00 USD</span></div>
-      </div>
+    <div class="sidebar">
+      <a href="grades.html">Grades</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="selected-courses.html">Selected Courses</a>
+      <a href="login.html">Logout</a>
     </div>
 
-    <div class="box">
-      <h2>University Messages</h2>
-      <ul class="messages">
-        <li>New semester starts on September 2, 2025.</li>
-        <li>Exam schedule will be published soon.</li>
-        <li>Library access renewed until end of semester.</li>
-        <li>Submit lab reports by Friday.</li>
-        <li>New student ID cards available.</li>
-        <li>Check your CIU email regularly for updates.</li>
-        <li>Midterm grades will be available next week.</li>
-        <li>University event on October 10th, 2025.</li>
-        <li>All students must update their contact info.</li>
-        <li>Advising sessions start next Monday.</li>
-      </ul>
+    <div class="main">
+      <div class="info-box">
+        <h3>Student Information</h3>
+        <p><strong>Name:</strong> Muhammad Younes</p>
+        <p><strong>Student Status:</strong> <span class="green">Active student</span></p>
+        <p><strong>University:</strong> Caucasus International University</p>
+        <p><strong>Faculty:</strong> Dentistry</p>
+        <p><strong>Academic Year:</strong> 2024–2025</p>
+        <p><strong>GPA:</strong> 2.9</p>
+        <p><strong>Balance:</strong> <span class="green">0.00 USD</span></p>
+      </div>
+
+      <div class="messages">
+        <h3>University Messages</h3>
+        <div class="message">New semester starts on September 2, 2025.</div>
+        <div class="message">Exam schedule will be published soon.</div>
+        <div class="message">Library access renewed until end of semester.</div>
+        <div class="message">Submit lab reports by Friday.</div>
+        <div class="message">New student ID cards available.</div>
+        <div class="message">Midterm grades will be available next week.</div>
+        <div class="message">Reminder: pay tuition before the deadline.</div>
+        <div class="message">Final exams scheduled in December.</div>
+        <div class="message">No classes on October 14 (public holiday).</div>
+        <div class="message">Workshop on dental hygiene this Friday.</div>
+      </div>
     </div>
   </div>
 </body>
