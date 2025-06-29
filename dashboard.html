@@ -2,125 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard - CIU Student Portal</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #ffffff;
     }
-    .header {
-      background-color: #2f2f2f;
-      color: white;
-      padding: 10px 20px;
+
+    header {
+      background-color: #333;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
     }
-    .header img {
+
+    header img {
       height: 50px;
       margin-right: 20px;
     }
-    .header h1 {
-      font-size: 22px;
-      margin: 0;
+
+    header h1 {
+      color: #fff;
+      font-size: 24px;
     }
-    .main {
+
+    .container {
       display: flex;
     }
-    .sidebar {
-      width: 200px;
-      background-color: #f2f2f2;
+
+    nav {
+      background-color: #f0f0f0;
       padding: 20px;
-      min-height: 100vh;
+      width: 220px;
+      box-shadow: 1px 0 5px rgba(0,0,0,0.1);
     }
-    .sidebar a {
+
+    nav a {
       display: block;
       margin-bottom: 15px;
-      color: #003366;
+      color: #c30000;
       text-decoration: none;
+      font-size: 18px;
       font-weight: bold;
     }
-    .sidebar a:hover {
-      color: #d9534f;
-    }
+
     .content {
       flex: 1;
-      padding: 20px;
+      padding: 30px;
     }
+
     .student-info {
-      background-color: #e0e0e0;
-      padding: 15px;
+      background-color: #2f2f2f;
+      color: white;
+      padding: 20px;
       border-radius: 8px;
-      margin-bottom: 20px;
+      font-size: 18px;
+      margin-bottom: 30px;
     }
-    .student-info div {
-      margin-bottom: 5px;
+
+    .student-info span {
+      display: inline-block;
+      margin-right: 20px;
     }
-    .student-info .status {
+
+    .status {
       color: green;
       font-weight: bold;
     }
+
     .messages {
       margin-top: 20px;
     }
+
     .messages h2 {
+      color: #c30000;
+      font-size: 22px;
       margin-bottom: 15px;
-      color: #003366;
     }
-    .message-box {
+
+    .message {
       border: 1px solid #ccc;
-      background-color: #f9f9f9;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 12px 15px;
       border-radius: 6px;
+      margin-bottom: 10px;
+      background-color: #fafafa;
+      font-size: 16px;
     }
-    .message-box.red {
-      color: #d9534f;
+
+    footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 16px;
     }
-    .message-box.green {
-      color: green;
+
+    footer h3 {
+      color: #c30000;
+    }
+
+    footer p {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="ciu-logo.png" alt="CIU Logo" />
-    <h1>Caucasus International University</h1>
-  </div>
 
-  <div class="main">
-    <div class="sidebar">
+  <header>
+    <img src="ciu-logo.png" alt="CIU Logo">
+    <h1>Caucasus International University</h1>
+  </header>
+
+  <div class="container">
+    <nav>
       <a href="grades.html">Grades</a>
       <a href="profile.html">Student Profile</a>
+      <a href="selected-courses.html">Selected Courses</a>
       <a href="schedule.html">Schedule</a>
-      <a href="courses.html">Selected Courses</a>
-      <a href="logout.html">Logout</a>
-    </div>
+      <a href="index.html">Logout</a>
+    </nav>
 
     <div class="content">
       <div class="student-info">
-        <div><strong>Name:</strong> Muhammad Younes</div>
-        <div><strong>University:</strong> CIU</div>
-        <div><strong>Faculty:</strong> Dentistry</div>
-        <div><strong>Year:</strong> 2nd Year</div>
-        <div><strong>GPA:</strong> 2.9</div>
-        <div class="status">Active Student</div>
+        <span><strong>Name:</strong> Muhammad Younes</span>
+        <span><strong>ID:</strong> LR2545978</span>
+        <span><strong>Status:</strong> <span class="status">Active Student</span></span>
+        <span><strong>GPA:</strong> 2.9</span>
+        <span><strong>Faculty:</strong> Dentistry</span>
       </div>
 
       <div class="messages">
         <h2>University Messages</h2>
-        <div class="message-box green">Orientation for new students starts Monday.</div>
-        <div class="message-box red">Deadline for course registration is this Friday!</div>
-        <div class="message-box green">Library is open until 10 PM this week.</div>
-        <div class="message-box red">Parking area under renovation till Thursday.</div>
-        <div class="message-box green">Health insurance renewals available online.</div>
-        <div class="message-box red">Final exam schedule released in portal.</div>
-        <div class="message-box green">Dentistry seminar this Saturday at 11 AM.</div>
-        <div class="message-box red">Late payment fee applies after 10 July.</div>
-        <div class="message-box green">New cafeteria menu now available.</div>
-        <div class="message-box red">No classes next Monday due to holiday.</div>
+
+        <!-- 20 رسالة جامعية متنوعة -->
+        <div class="message">Reminder: Midterm exams will start next Monday.</div>
+        <div class="message">All students must renew library cards by July 15th.</div>
+        <div class="message">Dental lab open hours updated on student portal.</div>
+        <div class="message">New elective courses available for Fall semester.</div>
+        <div class="message">University closed on public holiday next Thursday.</div>
+        <div class="message">Graduation photo session starts August 1st.</div>
+        <div class="message">Medical insurance renewals now open.</div>
+        <div class="message">Faculty meeting scheduled for July 10th at 2 PM.</div>
+        <div class="message">Check updated COVID-19 policy in your email.</div>
+        <div class="message">Summer research grants open for applications.</div>
+        <div class="message">Internship fair will be held on July 25th.</div>
+        <div class="message">Student ID renewal is required this month.</div>
+        <div class="message">Reminder: Tuition deadline August 5th.</div>
+        <div class="message">University choir accepting new members.</div>
+        <div class="message">Dental clinic shifts updated on portal.</div>
+        <div class="message">University Wi-Fi maintenance on July 3rd.</div><div class="message">New psychology workshop on July 12th.</div>
+        <div class="message">Join the student volunteering program now!</div>
+        <div class="message">Academic advisor office hours updated.</div>
+        <div class="message">Parking access requires new permits.</div>
       </div>
     </div>
   </div>
+
+  <footer>
+    <h3>Contact Information</h3>
+    <p><strong>Phone:</strong> +995557217112</p>
+    <p><strong>Email:</strong> mohammad.youness@ciu.edu.ge</p>
+    <p><strong>House Number:</strong> Empty</p>
+    <p><strong>Address:</strong> Empty</p>
+  </footer>
+
 </body>
 </html>
