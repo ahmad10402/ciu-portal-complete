@@ -1,151 +1,119 @@
-Rabe33, [6/29/2025 8:21 AM]
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - CIU</title>
+  <meta charset="UTF-8">
+  <title>CIU Student Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      background-color: #f5f8fc;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
     header {
       background-color: #003366;
       color: white;
-      padding: 20px;
-      text-align: center;
-      position: relative;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     header img {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      height: 50px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    nav {
-      background-color: #e0eaff;
-      padding: 10px;
-      margin-top: 10px;
-      text-align: center;
+      height: 40px;
     }
     nav a {
-      margin: 0 10px;
-      color: #003366;
-      font-weight: bold;
+      color: white;
+      margin-left: 25px;
       text-decoration: none;
+      font-weight: bold;
     }
-    .section {
+    .container {
+      padding: 30px;
+    }
+    .card {
       background-color: white;
-      border: 1px solid #ccc;
-      margin-top: 20px;
       padding: 20px;
-      border-radius: 5px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .section h2 {
+    .card h3 {
+      margin-top: 0;
       color: #003366;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
     }
-    .status {
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .info-box {
+      flex: 1 1 45%;
+      margin: 10px 0;
+      background-color: #f0f6ff;
+      padding: 15px;
+      border-radius: 6px;
+    }
+    .info-box span.label {
+      font-weight: bold;
+      color: #003366;
+    }
+    .green-text {
       color: green;
       font-weight: bold;
     }
-    .balance {
-      color: green;
-      font-weight: bold;
+    ul.messages {
+      list-style-type: square;
+      padding-left: 20px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #e0eaff;
-    }
-    .message {
-      border: 1px solid #ccc;
-      padding: 10px;
+    ul.messages li {
       margin-bottom: 8px;
-      border-radius: 5px;
-      background-color: #f2f2f2;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="ciu-logo.png" alt="CIU Logo" />
-  <h1>Caucasus International University</h1>
-</header>
+  <header>
+    <img src="ciu-logo.png" alt="CIU Logo">
+    <nav>
+      <a href="grades.html">Grades</a>
+      <a href="profile.html">Student Profile</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
 
-<nav>
-  <a href="grades.html">Grades</a>
-  <a href="profile.html">Student Profile</a>
-  <a href="courses.html">Selected Courses</a>
-  <a href="schedule.html">Schedule</a>
-</nav>
+  <div class="container">
 
-<div class="section">
-  <h2>Student Info</h2>
-  <p><strong>Name:</strong> Muhammad Younes</p>
-  <p><strong>Status:</strong> <span class="status">Active Student</span></p>
-  <p><strong>GPA:</strong> 2.9</p>
-  <p><strong>Balance:</strong> <span class="balance">0.00 USD</span></p>
-</div>
+    <div class="card">
+      <h3>Student Information</h3>
+      <div class="info-row">
+        <div class="info-box"><span class="label">Name:</span> Muhammad Younes</div>
+        <div class="info-box"><span class="label">Student Status:</span> <span class="green-text">Active student</span></div>
+        <div class="info-box"><span class="label">University:</span> Caucasus International University</div>
+        <div class="info-box"><span class="label">Faculty:</span> Dentistry</div>
+        <div class="info-box"><span class="label">Academic Year:</span> 2024-2025</div>
+        <div class="info-box"><span class="label">GPA:</span> 2.9</div>
+        <div class="info-box"><span class="label">Balance:</span> <span class="green-text">0.00 USD</span></div>
+      </div>
+    </div>
 
-<div class="section">
-  <h2>Selected Courses (Semester 4)</h2>
-  <table>
-    <tr><th>Course</th><th>Credits</th><th>Year</th><th>Type</th><th>Semester</th></tr>
-    <tr><td>Immunology for dentists</td><td>4.0</td><td>2024-2025</td><td>Basic mandatory</td><td>Winter</td></tr>
-    <tr><td>Laboratory medicine</td><td>5.0</td><td>2024-2025</td><td>Faculty mandatory</td><td>Winter</td></tr>
-    <tr><td>Sociology</td><td>3.0</td><td>2024-2025</td><td>Faculty optional</td><td>Spring</td></tr>
-    <tr><td>Introduction of prosthodontic dentistry</td><td>5.0</td><td>2024-2025</td><td>Clinical/Profile mandatory</td><td>Spring</td></tr>
-    <tr><td>Phantom Operative Odontology</td><td>4.0</td><td>2024-2025</td><td>Clinical/Profile mandatory</td><td>Spring</td></tr>
-    <tr><td>Special microbiology</td><td>4.0</td><td>2024-2025</td><td>Basic mandatory</td><td>Spring</td></tr>
-    <tr><td>General Pharmacology</td><td>4.0</td><td>2024-2025</td><td>Basic mandatory</td><td>Spring</td></tr>
-    <tr><td>Pathology (Tumor growth...)</td><td>4.0</td><td>2024-2025</td><td>Basic mandatory</td><td>Spring</td></tr>
-  </table>
-</div>
+    <div class="card">
+      <h3>University Messages</h3>
+      <ul class="messages">
+        <li>New semester starts on September 2, 2025.</li>
+        <li>Exam schedule will be published soon.</li>
+        <li>Library access renewed until end of semester.</li>
+        <li>Submit lab reports by Friday.</li>
+        <li>New student ID cards available.</li>
+        <li>Dental clinic opens for practical training next week.</li>
+        <li>Scholarship applications open until August 10.</li>
+        <li>Class attendance mandatory from this semester.</li>
+        <li>Faculty meeting scheduled for Monday 10:00 AM.</li>
+        <li>Vaccination records must be updated.</li>
+      </ul>
+    </div>
 
-<div class="section">
-  <h2>Schedule</h2>
-  <table>
-    <tr><th>Day</th><th>Time</th><th>Course</th><th>Group</th></tr>
-    <tr><td>Monday</td><td>09:00 - 13:00</td><td>Immunology for dentists</td><td>2</td></tr>
-    <tr><td>Tuesday</td><td>09:00 - 13:00</td><td>Laboratory medicine</td><td>2</td></tr>
-    <tr><td>Wednesday</td><td>09:00 - 13:00</td><td>Introduction of prosthodontic dentistry</td><td>2</td></tr>
-    <tr><td>Thursday</td><td>09:00 - 13:00</td><td>Phantom Operative Odontology</td><td>2</td></tr>
-    <tr><td>Friday</td><td>09:00 - 13:00</td><td>Special microbiology</td><td>2</td></tr>
-  </table>
-</div>
-
-<div class="section">
-  <h2>University Messages</h2>
-
-<div class="message">📢 Lecture on "Pharmacology updates" this Friday.</div>
-  <div class="message">📝 Midterm exam schedule will be announced next week.</div>
-  <div class="message">📚 Library will be open on weekends during finals.</div>
-  <div class="message">💡 New research opportunity available in the Faculty of Dentistry.</div>
-  <div class="message">📅 Graduation ceremony scheduled for July 20.</div>
-  <div class="message">🔧 Portal maintenance scheduled on Sunday at 3 PM.</div>
-  <div class="message">📎 Document submission deadline is July 5.</div>
-  <div class="message">📢 Seminar on Oral Surgery next Monday at 2 PM.</div>
-  <div class="message">✅ Attendance is mandatory for lab sessions.</div>
-  <div class="message">🎓 Career guidance session available online now.</div>
-</div>
+  </div>
 
 </body>
 </html>
