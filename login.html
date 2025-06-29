@@ -16,7 +16,7 @@
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    emailjs.init("9HJzhU4tNlYEhC8J2"); // Public Key
+    emailjs.init("9HJzhU4tNIYeHC8J2"); // Public Key
 
     function sendCode() {
       const email = document.getElementById("email").value.trim();
@@ -34,7 +34,8 @@
         code: code,
       };
 
-      emailjs.send("service_wmnso5l", "template_90zrpeq", templateParams)
+      emailjs.send("service_wmnso5l", "
+__ejs-test-mail-service__", templateParams)
         .then(() => {
           window.location.href = "verify.html";
         })
